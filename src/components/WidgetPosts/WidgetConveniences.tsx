@@ -21,7 +21,7 @@ const WidgetConveniences: FC<WidgetConveniencesProps> = ({
   return (
     <div className={`nc-WidgetPosts rounded-3xl overflow-hidden ${className}`}>
       <WidgetHeading1
-        title="✨ Conveniences"
+        title="✨ Básicos"
         viewAll={{ label: "View all", href: "/#" }}
       />
       <div className="flex flex-col divide-y divide-neutral-200 dark:divide-neutral-700">

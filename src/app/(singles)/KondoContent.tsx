@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React from "react";
 
-const SingleContentKondo = () => {
+const KondoContent = () => {
   return (
     <>
       {/* THIS IS THE DEMP CONTENT - YOU CAN USE MARKDOWN, JSON ...*/}
@@ -91,4 +91,4 @@ const SingleContentKondo = () => {
   );
 };
 
-export default SingleContentKondo;
+export default KondoContent;

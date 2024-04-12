@@ -1,8 +1,7 @@
 import React, { ReactNode } from "react";
-import SingleContent from "../SingleContent";
-import SingleRelatedPosts from "../SingleRelatedPosts";
 import Image from "next/image";
 import { Sidebar } from "../Sidebar";
+import SingleKondoContent from "../SingleKondoContent";
 
 // KONDO INTERNAL PAGE LAYOUT
 const layout = ({ children }: { children: ReactNode }) => {
@@ -33,7 +32,7 @@ const layout = ({ children }: { children: ReactNode }) => {
 
       <div className="container flex flex-col my-10 lg:flex-row ">
         <div className="w-full lg:w-3/5 xl:w-2/3 xl:pe-20">
-          <SingleContent />
+          <SingleKondoContent />
         </div>
         <div className="w-full mt-12 lg:mt-0 lg:w-2/5 lg:ps-10 xl:ps-0 xl:w-1/3">
           <Sidebar />

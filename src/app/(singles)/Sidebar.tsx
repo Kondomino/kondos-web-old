@@ -14,6 +14,7 @@ export interface SidebarProps {
 }
 
 const widgetConveniences: ConvenienceType[] = DEMO_CONVENIENCES.filter((_, i) => i > 2 && i < 7);
+const widgetBasics: ConvenienceType[] = DEMO_CONVENIENCES.filter((item) => item.type == 'basic');
 const tags = DEMO_TAGS.filter((_, i) => i > 5);
 const categories = DEMO_CATEGORIES.filter((_, i) => i > 7 && i < 13);
 const authors = DEMO_AUTHORS.filter((_, i) => i < 5);
@@ -24,7 +25,7 @@ export const Sidebar: FC<SidebarProps> = ({ className = "space-y-6 " }) => {
       <WidgetConveniences posts={widgetConveniences} />
       <WidgetConveniences posts={widgetConveniences} />
       <WidgetTags tags={tags} />
-      <WidgetCategories categories={categories} />
+      <WidgetConveniences posts={widgetConveniences} />
     </div>
   );
 };
