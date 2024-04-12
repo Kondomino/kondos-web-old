@@ -1,0 +1,82 @@
+[
+  {
+    "index": 1,
+    "id": "9e3e3994-a3ed-47ca-a014-d4483884cfe2",
+    "featuredImage": "https://images.unsplash.com/photo-1440778303588-435521a205bc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80",
+    "title": "Rede Elétrica",
+    "type": "basic",
+    "href": "/single/this-is-single-slug"
+  },
+  {
+    "index": 2,
+    "id": "9e3e3994-a3ed-47ca-a014-d4483884cfe2",
+    "featuredImage": "https://images.unsplash.com/photo-1440778303588-435521a205bc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80",
+    "title": "Calçadas",
+    "type": "basic",
+    "href": "/single/this-is-single-slug"
+  },
+  {
+    "index": 3,
+    "id": "9e3e3994-a3ed-47ca-a014-d4483884cfe2",
+    "featuredImage": "https://images.unsplash.com/photo-1440778303588-435521a205bc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80",
+    "title": "Água encanada",
+    "type": "basic",
+    "href": "/single/this-is-single-slug"
+  },
+  {
+    "index": 4,
+    "id": "9e3e3994-a3ed-47ca-a014-d4483884cfe2",
+    "featuredImage": "https://images.unsplash.com/photo-1440778303588-435521a205bc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80",
+    "title": "Portaria 24h",
+    "type": "convenience",
+    "href": "/single/this-is-single-slug"
+  },  
+  {
+    "index": 5,
+    "id": "9e3e3994-a3ed-47ca-a014-d4483884cfe2",
+    "featuredImage": "https://images.unsplash.com/photo-1440778303588-435521a205bc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80",
+    "title": "Churrasqueira",
+    "type": "convenience",
+    "href": "/single/this-is-single-slug"
+  },
+  {
+    "index": 6,
+    "id": "9e3e3994-a3ed-47ca-a014-d4483884cfe2",
+    "featuredImage": "https://images.unsplash.com/photo-1440778303588-435521a205bc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80",
+    "title": "Quadra de Esportes",
+    "type": "convenience",
+    "href": "/single/this-is-single-slug"
+  },
+  {
+    "index": 7,
+    "id": "9e3e3994-a3ed-47ca-a014-d4483884cfe2",
+    "featuredImage": "https://images.unsplash.com/photo-1440778303588-435521a205bc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80",
+    "title": "Piscina",
+    "type": "convenience",
+    "href": "/single/this-is-single-slug"
+  },
+  {
+    "index": 8,
+    "id": "9e3e3994-a3ed-47ca-a014-d4483884cfe2",
+    "featuredImage": "https://images.unsplash.com/photo-1440778303588-435521a205bc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80",
+    "title": "Espaço de Conveniência",
+    "type": "convenience",
+    "href": "/single/this-is-single-slug"
+  },
+  {
+    "index": 9,
+    "id": "9e3e3994-a3ed-47ca-a014-d4483884cfe2",
+    "featuredImage": "https://images.unsplash.com/photo-1440778303588-435521a205bc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80",
+    "title": "Lagoa",
+    "type": "convenience",
+    "href": "/single/this-is-single-slug"
+  },
+  {
+    "index": 10,
+    "id": "9e3e3994-a3ed-47ca-a014-d4483884cfe2",
+    "featuredImage": "https://images.unsplash.com/photo-1440778303588-435521a205bc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80",
+    "title": "Banda Larga",
+    "type": "convenience",
+    "href": "/single/this-is-single-slug"
+  }
+]
