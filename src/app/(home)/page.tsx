@@ -1,12 +1,6 @@
 import React from "react";
-import SectionLargeSlider from "@/app/(home)/SectionLargeSlider";
-import BackgroundSection from "@/components/BackgroundSection/BackgroundSection";
-import SectionSliderNewAuthors from "@/components/SectionSliderNewAthors/SectionSliderNewAuthors";
 import {
   DEMO_POSTS,
-  DEMO_POSTS_AUDIO,
-  DEMO_POSTS_GALLERY,
-  DEMO_POSTS_VIDEO,
 } from "@/data/posts";
 import { DEMO_CATEGORIES, DEMO_TAGS } from "@/data/taxonomies";
 
@@ -20,13 +14,8 @@ import { PostDataType } from "@/data/types";
 import ButtonCircle from "@/components/Button/ButtonCircle";
 import Input from "@/components/Input/Input";
 import NcImage from "@/components/NcImage/NcImage";
-import NcLink from "@/components/NcLink/NcLink";
 import { ArrowRightIcon } from "@heroicons/react/24/solid";
 
-//
-const MAGAZINE1_POSTS = DEMO_POSTS.filter((_, i) => i >= 8 && i < 16);
-const MAGAZINE2_POSTS = DEMO_POSTS.filter((_, i) => i >= 0 && i < 7);
-//
 // Tag and category have same data type - we will use one demo data
 const posts: PostDataType[] = DEMO_POSTS.filter((_, i) => i < 16);
 

@@ -2,9 +2,20 @@ import React, { ReactNode } from "react";
 import Image from "next/image";
 import { Sidebar } from "../Sidebar";
 import SingleKondoContent from "../SingleKondoContent";
+import { findKONDOSByID } from "@/app/store/actions/kondos.actions";
+import { useAppSelector, useTypedDispatch } from "@/app/store/store";
+import { useDispatch } from "react-redux";
+import { KondoModel } from "@/app/store/models/kondo.model";
 
 // KONDO INTERNAL PAGE LAYOUT
 const layout = ({ children }: { children: ReactNode }) => {
+  // eslint-disable-next-line react-hooks/rules-of-hooks
+  const dispatch = useTypedDispatch();
+  // eslint-disable-next-line react-hooks/rules-of-hooks
+  const kondoFetch = dispatch(findKONDOSByID(289));
+
+  const kondo = Object.assign(new KondoModel(), kondoFetch);
+  
   return (
     <div>
 
@@ -20,7 +31,7 @@ const layout = ({ children }: { children: ReactNode }) => {
           />
           <div className="absolute inset-0 bg-black text-white bg-opacity-30 flex flex-col items-center justify-center">
             <h2 className="inline-block align-middle text-5xl font-semibold md:text-7xl ">
-              Ville des Lacs
+              {kondo.name}
             </h2>
             <span className="block mt-4 text-neutral-300">Frase marcante.</span>
           </div>

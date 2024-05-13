@@ -1,8 +1,6 @@
 import React, { FC } from "react";
-import Avatar from "@/components/Avatar/Avatar";
-import { ConvenienceType, PostDataType } from "@/data/types";
-import Link from "next/link";
-import { ChevronDownIcon, GlobeAltIcon } from "@heroicons/react/24/solid";
+import { ConvenienceType } from "@/data/types";
+import { GlobeAltIcon } from "@heroicons/react/24/solid";
 
 export interface PostCardMetaConvenienceProps {
   className?: string;
@@ -24,15 +22,9 @@ const PostCardMetaConvenience: FC<PostCardMetaConvenienceProps> = ({
       className={`nc-PostCardMeta inline-flex items-center flex-wrap text-neutral-800 dark:text-neutral-200 ${className}`}
     >
       {!hiddenAvatar && (
-        /*<Avatar
-          radius="rounded-full"
-          sizeClass={avatarSize}
-          imgUrl={featuredImage}
-          userName={'something'}
-        />*/
         <GlobeAltIcon
-        className="w-4 h-4 ms-2 -me-1"
-        aria-hidden="true"
+          className="w-5 h-5 ms-2 m-2"
+          aria-hidden="true"
         />
       )}
       {" "}

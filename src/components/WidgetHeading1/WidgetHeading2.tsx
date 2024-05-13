@@ -2,13 +2,13 @@ import { CustomLink } from "@/data/types";
 import Link from "next/link";
 import React, { FC } from "react";
 
-export interface WidgetHeading1Props {
+export interface WidgetHeading2Props {
   className?: string;
   title: string;
   viewAll?: CustomLink;
 }
 
-const WidgetHeading1: FC<WidgetHeading1Props> = ({
+const WidgetHeading2: FC<WidgetHeading2Props> = ({
   className = "",
   title,
   viewAll,
@@ -34,4 +34,4 @@ const WidgetHeading1: FC<WidgetHeading1Props> = ({
   );
 };
 
-export default WidgetHeading1;
+export default WidgetHeading2;

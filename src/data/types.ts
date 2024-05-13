@@ -66,7 +66,7 @@ export interface ConvenienceType {
   href: Route;
   title: string;
   featuredImage: string | StaticImageData;
-  type: "basic" | "convenience"
+  type: "basic" | "convenience" | "extra"
 }
 
 export type TwMainColor =

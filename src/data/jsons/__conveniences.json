@@ -68,8 +68,10 @@
     "id": "9e3e3994-a3ed-47ca-a014-d4483884cfe2",
     "featuredImage": "https://images.unsplash.com/photo-1440778303588-435521a205bc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80",
     "title": "Lagoa",
-    "type": "convenience",
-    "href": "/single/this-is-single-slug"
+    "type": "extra",
+    "href": "/single/this-is-single-slug",
+    "authorId": 4,
+    "date": "May 20, 2021"
   },
   {
     "index": 10,
