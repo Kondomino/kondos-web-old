@@ -1,21 +1,28 @@
-import { combineReducers, createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
 import { initialState } from "./kondos.initial";
 import kondosReducerDocStyle from "./kondos.reducer.docstyle";
 
 export const kondoSlice = createSlice({
-  name: "kondo",
+  name: "kondos",
   initialState,
-  reducers: combineReducers(kondosReducerDocStyle)
-    /*setKondoState: (state, action: PayloadAction<boolean>) => {
-      state.kondoState = action.payload;
-    }
-    */
+  reducers: {
+    ...kondosReducerDocStyle,
+    _setSelectedKondo: (state, action: any) => {
+      const { id } = action;
+
+      const selected = state.allKondos.filter(kondo => kondo.id == id);
+
+      state.selectedKondo = selected? selected[0] : null;
+    },
+    _populateKondos: (state, action) => {
+      console.log('_populateKondos', action.payload);
+      
+      state.allKondos.push(action.payload);
+    },
+  }
 });
 
-
-//export const { setKondoState } = kondoSlice.actions;
+export const { _setSelectedKondo, _populateKondos } = kondoSlice.actions;
 export const kondosReducer = kondoSlice.reducer;
-export const selectKondo = (state: { kondo: any; }) => state.kondo
-export const selectAllKondos = (state: any) => state
 

@@ -14,6 +14,7 @@ const KondoContent = () => {
         suscipit accusantium dignissimos culpa cumque.
       </p>
       <h2>Proximidade</h2>
+      <StupidButton></StupidButton>
       <p>
         A proximidade à BH é de {" "}
         <strong>25 minutos</strong>. 

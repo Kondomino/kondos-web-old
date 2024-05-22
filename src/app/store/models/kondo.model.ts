@@ -1,4 +1,6 @@
+import { PostAuthorType } from "@/data/types";
 import { Model } from "./model";
+import { StaticImageData } from "next/image";
 
 export class KondoModel extends Model
 {
@@ -9,6 +11,37 @@ export class KondoModel extends Model
     active?: boolean;
 
     slug?: string;
+
+    /*
+    * FRONT END PROPERTIES
+    */
+    href?: string | URL;
+    author: PostAuthorType;
+    date?: string = '01/06/2024';
+    //categories: TaxonomyType[];
+    categories?: any[] = [];
+    title?: string;
+    featuredImage: string | StaticImageData;
+    desc?: string;
+    like?: {
+        count: number;
+        isLiked: boolean;
+    };
+    bookmark?: {
+        count: number;
+        isBookmarked: boolean;
+    };
+    commentCount?: number;
+    viewdCount?: number;
+    readingTime?: number;
+    postType?: "standard" | "video" | "gallery" | "audio" = "standard";
+    videoUrl?: string;
+    audioUrl?: string | string[];
+    galleryImgs?: string[];
+
+    /*
+    * END OF FRONT END PROPERTIES
+    */
 
     type?: string;
     

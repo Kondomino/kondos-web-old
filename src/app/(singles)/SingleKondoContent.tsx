@@ -3,13 +3,8 @@
 import React, { FC, useEffect, useRef, useState } from "react";
 import Tag from "@/components/Tag/Tag";
 import SingleAuthor from "./SingleAuthor";
-import SingleCommentForm from "./SingleCommentForm";
-import SingleCommentLists from "./SingleCommentLists";
 import { DEMO_TAGS } from "@/data/taxonomies";
 import useIntersectionObserver from "@/hooks/useIntersectionObserver";
-import PostCardLikeAction from "@/components/PostCardLikeAction/PostCardLikeAction";
-import PostCardCommentBtn from "@/components/PostCardCommentBtn/PostCardCommentBtn";
-import { ArrowUpIcon } from "@heroicons/react/24/solid";
 import KondoContent from "./KondoContent";
 
 const demoTags = DEMO_TAGS.filter((_, i) => i < 9);

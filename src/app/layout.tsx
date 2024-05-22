@@ -1,4 +1,4 @@
-"use client";
+"use client"
 import "./globals.css";
 import "@/styles/index.scss";
 import { Poppins } from "next/font/google";
@@ -23,6 +23,7 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  
   return (
     <ReduxProvider>
       <html lang="en" className={poppins.className}>

@@ -1,33 +1,42 @@
 "use client";
 
-import React, { FC, useState } from "react";
-import PostCardSaveAction from "@/components/PostCardSaveAction/PostCardSaveAction";
-import { PostDataType } from "@/data/types";
-import CategoryBadgeList from "@/components/CategoryBadgeList/CategoryBadgeList";
-import PostCardLikeAndComment from "@/components/PostCardLikeAndComment/PostCardLikeAndComment";
-import PostCardMeta from "@/components/PostCardMeta/PostCardMeta";
-import PostFeaturedMedia from "@/components/PostFeaturedMedia/PostFeaturedMedia";
-import Link from "next/link";
+import React, { FC, Key, useState } from "react";
+import { useDispatch } from "react-redux";
+import { POPULATE_KONDOS, RETRIEVE_KONDOS } from "@/app/store/actions/types";
+import { _populateKondos } from "@/app/store/reducers/kondo/kondos.reducer";
+import Card11 from "../Card11/Card11";
+import { normalizeKondos } from "@/app/store/selectors/kondos.selector";
 
-export interface Card11Props {
-  className?: string;
-  post: PostDataType;
-  ratio?: string;
-  hiddenAuthor?: boolean;
-}
-
-const Card11: FC<Card11Props> = ({
-  className = "h-full",
-  post,
-  hiddenAuthor = false,
-  ratio = "aspect-w-4 aspect-h-3",
+const CardHomeKondos: FC<{kondos:[]}> = ({
+  kondos = [],
 }) => {
-  const { title, href, categories, date } = post;
+  console.log('kondos received as props', kondos);
 
-  const [isHover, setIsHover] = useState(false);
+  const dispatch = useDispatch();
 
+  dispatch(_populateKondos({
+    type: POPULATE_KONDOS,
+    payload: kondos,
+  }));
+
+  //const [isHover, setIsHover] = useState(false);
+  const kondosNormalized = normalizeKondos(kondos);
+
+  console.log('kondosNormalized', kondosNormalized);
   return (
-    <div
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 md:gap-8 mt-8 lg:mt-10">
+      {kondosNormalized?.map((kondo: { name: string, id: Key }, key: Number) => (
+        <Card11 key={kondo.id} post={kondo} />
+      ))}
+    </div>
+  );
+};
+
+export default CardHomeKondos;
+
+
+/*
+<div
       className={`nc-Card11 relative flex flex-col group rounded-3xl overflow-hidden bg-white dark:bg-neutral-900 ${className}`}
       onMouseEnter={() => setIsHover(true)}
       onMouseLeave={() => setIsHover(false)}
@@ -64,7 +73,4 @@ const Card11: FC<Card11Props> = ({
         </div>
       </div>
     </div>
-  );
-};
-
-export default Card11;
+    */

@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useReducer } from "react";
 import NcImage from "@/components/NcImage/NcImage";
 import SingleHeader from "@/app/(singles)/SingleHeader";
 import ListingImageGallery from "@/components/listing-image-gallery/ListingImageGallery";
@@ -8,17 +8,24 @@ import { Route } from "next";
 import { useRouter, usePathname, useSearchParams } from "next/navigation";
 import { imgHigtQualitys } from "@/contains/fakeData";
 import { StaticImageData } from "next/image";
+import { selectKondoBySlug } from "@/app/store/selectors/kondos.selector";
+import { connect } from "react-redux";
+import { _setSelectedKondo } from "@/app/store/reducers/kondo/kondos.reducer";
 
 const IMAGES_GALLERY: (string | StaticImageData)[] = imgHigtQualitys;
 
 // KONDO INTERNAL PAGE CONTENT
-const PageSingle = () => {
+const PageSingle = ({ params }) => {
   const router = useRouter();
   const thisPathname = usePathname();
   const searchParams = useSearchParams();
   const modal = searchParams?.get("modal");
-  //
 
+  //const dispatch = useAppDispatch();
+  const [state, dispatch] = useReducer(_setSelectedKondo, { id: 0 });
+
+  console.log('got state from reducer', state);
+  
   const handleCloseModalImageGallery = () => {
     let params = new URLSearchParams(document.location.search);
     params.delete("modal");
@@ -113,4 +120,17 @@ const PageSingle = () => {
   );
 };
 
-export default PageSingle;
+const mapStateToProps = (state: any, options: any) => {
+  
+  // TODO: THROW ERROR IF NO SLUG !!
+ 
+  const selected = selectKondoBySlug(state, options.params.slug);
+
+  console.log('selected', selected);
+
+  return {
+    kondo: selected
+  }
+}
+
+export default connect(mapStateToProps)(PageSingle);

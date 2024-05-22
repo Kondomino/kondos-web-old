@@ -9,6 +9,7 @@ import MediaAudio from "./MediaAudio";
 import Link from "next/link";
 import Image from "next/image";
 
+
 export interface PostFeaturedMediaProps {
   className?: string;
   post: PostDataType;

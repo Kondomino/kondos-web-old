@@ -1,21 +1,15 @@
+"use client"
 import React, { ReactNode } from "react";
 import Image from "next/image";
 import { Sidebar } from "../Sidebar";
 import SingleKondoContent from "../SingleKondoContent";
-import { findKONDOSByID } from "@/app/store/actions/kondos.actions";
-import { useAppSelector, useTypedDispatch } from "@/app/store/store";
-import { useDispatch } from "react-redux";
-import { KondoModel } from "@/app/store/models/kondo.model";
+import { connect } from "react-redux";
+import { selectKondoBySlug } from "@/app/store/selectors/kondos.selector";
 
 // KONDO INTERNAL PAGE LAYOUT
-const layout = ({ children }: { children: ReactNode }) => {
-  // eslint-disable-next-line react-hooks/rules-of-hooks
-  const dispatch = useTypedDispatch();
-  // eslint-disable-next-line react-hooks/rules-of-hooks
-  const kondoFetch = dispatch(findKONDOSByID(289));
+const layout = ({ children }: { children: ReactNode }, params) => {
 
-  const kondo = Object.assign(new KondoModel(), kondoFetch);
-  
+  console.log('wtf is params', params);
   return (
     <div>
 
@@ -31,7 +25,7 @@ const layout = ({ children }: { children: ReactNode }) => {
           />
           <div className="absolute inset-0 bg-black text-white bg-opacity-30 flex flex-col items-center justify-center">
             <h2 className="inline-block align-middle text-5xl font-semibold md:text-7xl ">
-              {kondo.name}
+              aeX
             </h2>
             <span className="block mt-4 text-neutral-300">Frase marcante.</span>
           </div>
@@ -54,4 +48,20 @@ const layout = ({ children }: { children: ReactNode }) => {
   );
 };
 
-export default layout;
+
+const mapStateToProps = (state: any, options: any) => {
+  
+  console.log('options .......', options);
+  // TODO: THROW ERROR IF NO SLUG !!
+ 
+  const selected = selectKondoBySlug(state, options.params.slug);
+
+  console.log('layout is ', selected);
+
+  return {
+    kondo: selected
+  }
+}
+
+export default connect(mapStateToProps)(layout);
+

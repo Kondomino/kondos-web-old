@@ -1,29 +1,34 @@
 import React from "react";
-import {
-  DEMO_POSTS,
-} from "@/data/posts";
 import { DEMO_CATEGORIES, DEMO_TAGS } from "@/data/taxonomies";
-
 import ModalCategories from "../(archives)/ModalCategories";
 import ModalTags from "../(archives)/ModalTags";
 import ArchiveFilterListBox from "@/components/ArchiveFilterListBox/ArchiveFilterListBox";
 import ButtonPrimary from "@/components/Button/ButtonPrimary";
 import Card11 from "@/components/Card11/Card11";
 import Pagination from "@/components/Pagination/Pagination";
-import { PostDataType } from "@/data/types";
 import ButtonCircle from "@/components/Button/ButtonCircle";
 import Input from "@/components/Input/Input";
 import NcImage from "@/components/NcImage/NcImage";
 import { ArrowRightIcon } from "@heroicons/react/24/solid";
+import { connect, useDispatch } from "react-redux";
+import { getData, retrieveKONDOs } from "../store/actions/kondos.actions";
+import { RETRIEVE_KONDOS } from "../store/actions/types";
+import CardHomeKondos from "@/components/CardHomeKondos/CardHomeKondos";
 
 // Tag and category have same data type - we will use one demo data
-const posts: PostDataType[] = DEMO_POSTS.filter((_, i) => i < 16);
+//const posts: PostDataType[] = DEMO_POSTS.filter((_, i) => i < 16);
 
 // HOME PAGE
-const PageHome = ({}) => {
+const PageHome = async (props: any) => {
   
+  const endpoint = 'http://localhost:3003/kondo';
+  //const res = await fetch('http://localhost:3003/kondo')
+  //console.log('res is ', res);
+
+  const kondos = (await getData(endpoint)) ?? [];
+
   let site_name = "Kondomino";
-  let s = "Região de Nova Lima";
+  let region = "Região de Nova Lima";
 
   const FILTERS = [
     { name: "Most Recent" },
@@ -77,7 +82,7 @@ const PageHome = ({}) => {
                     type="search"
                     placeholder="Type and press enter"
                     sizeClass="pl-14 py-5 pe-5 md:ps-16"
-                    defaultValue={s}
+                    defaultValue={region}
                   />
                   <ButtonCircle
                     className="absolute end-2.5 top-1/2 transform -translate-y-1/2"
@@ -120,11 +125,7 @@ const PageHome = ({}) => {
           </div>
 
           {/* LOOP ITEMS */}
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8 mt-8 lg:mt-10">
-            {posts.map((post) => (
-              <Card11 key={post.id} post={post} />
-            ))}
-          </div>
+          <CardHomeKondos kondos={kondos} />
 
           {/* PAGINATIONS */}
           <div className="flex flex-col mt-12 lg:mt-16 space-y-5 sm:space-y-0 sm:space-x-3 sm:flex-row sm:justify-between sm:items-center">

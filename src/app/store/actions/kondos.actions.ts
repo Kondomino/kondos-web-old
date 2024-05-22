@@ -1,10 +1,12 @@
+"use server"
 import KondosService from "@/services/kondos.service";
 import { CREATE_KONDOS, RETRIEVE_KONDOS, DELETE_ALL_KONDOS, DELETE_KONDOS, UPDATE_KONDOS } from "./types";
 import { KondoModel } from "../models/kondo.model";
-import { createAsyncThunk } from "@reduxjs/toolkit";
-import { TypedThunk } from "../store";
   
   export const createKONDO = (kondoDTO: KondoModel) => async (dispatch: any) => {
+
+    console.log('creating kondo action...');
+
     try {
       const res = await KondosService.create(kondoDTO);
   
@@ -20,13 +22,22 @@ import { TypedThunk } from "../store";
   };
   
   export const retrieveKONDOs = () => async (dispatch: any) => {
+
+    console.log('[ACTION] retrieveKONDOs');
+
     try {
       const res = await KondosService.getAll();
   
+      console.log('fetch result is ', res)  ;
+    /*
       dispatch({
         type: RETRIEVE_KONDOS,
         payload: res.data,
       });
+      */
+
+      return res.data;
+
     } catch (err) {
       console.log(err);
     }
@@ -75,7 +86,7 @@ import { TypedThunk } from "../store";
     }
   };
   
-  export const findKONDOSByID = (id: number):TypedThunk => async (dispatch: any) => {
+  export const findKONDOSByID = (id: number) => async (dispatch: any) => {
     console.log('findKONDOSByID');
     try {
       const res = await KondosService.findByID(id);
@@ -117,3 +128,17 @@ import { TypedThunk } from "../store";
     }
   };
   */
+
+  export async function getData(endpoint: any) {
+    try {
+      const response = await fetch(endpoint, {
+        cache: "no-store"
+      });
+      const data = await response.json();
+
+      return data;
+
+    } catch (error) {
+      console.log('FETCH ERROR', error);
+    }
+  }
