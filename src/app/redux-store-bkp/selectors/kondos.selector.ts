@@ -2,8 +2,6 @@ import { createSelector } from "@reduxjs/toolkit";
 import { KondoModel } from "../models/kondo.model";
 import { Route } from "next";
 import { kondominoAuthor } from "../reducers/kondo/kondos.initial";
-import avatarKondoA from "@/data/kondos/aaaa.jpg";
-import avatarKondoB from "@/data/kondos/do-front.jpg";
 
 export const selectAllKondos = (state: any) => state.kondos.allKondos;
 export const selectedKondo = (state: any) => state.selectedKondo;
@@ -26,6 +24,7 @@ export const selectKondoByID = createSelector(
 export const selectKondoBySlug = createSelector(
   [selectAllKondos, selectKondoSlug],
   (kondos, slug) => {
+    console.log('selectKondoBySlug ', kondos);
     const found = kondos.filter((kondo: { slug: string; }) => kondo.slug === slug);
 
     console.log('inside reducer, found is ', found);
@@ -45,8 +44,8 @@ export function normalizeKondos(kondos: any) {
     normalized.href = kondo.slug? '/single/' + kondo.slug : '/' as Route;
     normalized.categories = [];
     normalized.author = kondominoAuthor;
-    normalized.featuredImage = avatarKondoB;
     normalized.galleryImgs = ['/public/img/kondos/do-front.jpg'];
     return normalized;
   });
 }
+

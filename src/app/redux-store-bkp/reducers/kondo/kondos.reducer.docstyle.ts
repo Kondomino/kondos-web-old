@@ -4,7 +4,7 @@ import {
     UPDATE_KONDOS,
     RETRIEVE_KONDOS,
     POPULATE_KONDOS
-  } from './../../actions/types'
+  } from '../../actions/types'
 import { initialState } from './kondos.initial'
   
   

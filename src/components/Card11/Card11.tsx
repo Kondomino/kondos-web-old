@@ -20,11 +20,16 @@ const Card11: FC<Card11Props> = ({
   className = "h-full",
   post,
   hiddenAuthor = false,
-  ratio = "aspect-w-4 aspect-h-3",
+  ratio = "aspect-w-4 aspect-h-3"
 }) => {
-  const { title, href, categories, date } = post;
+  const { title, href, categories, date, slug } = post;
 
   const [isHover, setIsHover] = useState(false);
+
+  function handleSelectedKondo(e) {
+    e.stopPropagation();
+    console.log('user selected this kondo ', slug);
+  }
 
   return (
     <div
@@ -40,7 +45,9 @@ const Card11: FC<Card11Props> = ({
           <PostFeaturedMedia post={post} isHover={isHover} />
         </div>
       </div>
-      <Link href={href} className="absolute inset-0"></Link>
+      <Link href={href} className="absolute inset-0"
+        onClick={handleSelectedKondo}
+        ></Link>
       <span className="absolute top-3 inset-x-3 z-10">
         {categories.length > 0 &&
           <CategoryBadgeList categories={categories} />

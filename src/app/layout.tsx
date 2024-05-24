@@ -4,7 +4,7 @@ import "@/styles/index.scss";
 import { Poppins } from "next/font/google";
 import Footer from "@/components/Footer/Footer";
 import SiteHeader from "./SiteHeader";
-import ReduxProvider from "./store/redux.provider";
+import ReduxProvider from "./redux-store-bkp/redux.provider";
 
 /*
 export const metadata = {

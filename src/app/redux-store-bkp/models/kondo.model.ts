@@ -1,7 +1,28 @@
 import { PostAuthorType } from "@/data/types";
 import { Model } from "./model";
 import { StaticImageData } from "next/image";
-
+import avatarKondoA from "@/data/kondos/aaaa.jpg";
+import avatarKondoB from "@/data/kondos/bbb.jpg";
+import avatarKondoC from "@/data/kondos/ccc.jpg";
+import avatarKondoD from "@/data/kondos/ddd.jpg";
+import avatarKondoE from "@/data/kondos/eee.jpg";
+import avatarKondoF from "@/data/kondos/fff.jpg";
+import avatarKondoG from "@/data/kondos/ggg.jpg";
+import avatarKondoH from "@/data/kondos/hhh.jpg";
+import avatarKondoI from "@/data/kondos/iii.jpg";
+import avatarKondoJ from "@/data/kondos/jjj.jpg";
+import avatarKondoK from "@/data/kondos/kkk.jpg";
+import avatarKondoL from "@/data/kondos/lll.jpg";
+import avatarKondoM from "@/data/kondos/mmm.jpg";
+import avatarKondoN from "@/data/kondos/nnn.jpg";
+import avatarKondoO from "@/data/kondos/ooo.jpg";
+import avatarKondoP from "@/data/kondos/ppp.jpg";
+import avatarKondoQ from "@/data/kondos/qqq.jpg";
+import avatarKondoR from "@/data/kondos/rrr.jpg";
+import avatarKondoS from "@/data/kondos/sss.jpg";
+import avatarKondoT from "@/data/kondos/ttt.jpg";
+import avatarKondoU from "@/data/kondos/uuu.jpg";
+import avatarKondoV from "@/data/kondos/vvv.jpg";
 export class KondoModel extends Model
 {
     id?: number;
@@ -21,7 +42,7 @@ export class KondoModel extends Model
     //categories: TaxonomyType[];
     categories?: any[] = [];
     title?: string;
-    featuredImage: string | StaticImageData;
+    featuredImage: string | StaticImageData = this.generateRandomKondoAvatar();
     desc?: string;
     like?: {
         count: number;
@@ -120,4 +141,33 @@ export class KondoModel extends Model
     email?: string;
     
     video?: string;
+
+
+    generateRandomKondoAvatar() {
+        const availableAvatars = [
+            avatarKondoA,
+            avatarKondoB,
+            avatarKondoC,
+            avatarKondoD,
+            avatarKondoE,
+            avatarKondoF,
+            avatarKondoG,
+            avatarKondoH,
+            avatarKondoI,
+            avatarKondoJ,
+            avatarKondoK,
+            avatarKondoL,
+            avatarKondoM,
+            avatarKondoN,
+            avatarKondoO,
+            avatarKondoP,
+            avatarKondoQ,
+            avatarKondoR,
+            avatarKondoS,
+            avatarKondoT,
+            avatarKondoU,
+            avatarKondoV
+        ]
+        return availableAvatars[Math.floor(Math.random()*availableAvatars.length)];
+    }
 }

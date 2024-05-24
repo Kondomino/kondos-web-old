@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import { useAppSelector } from "../store/store";
+import { useAppSelector } from "../redux-store-bkp/store";
 import StupidButton from "./stupid.button";
 
 const KondoContent = () => {

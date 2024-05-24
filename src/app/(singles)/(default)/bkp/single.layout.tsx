@@ -1,15 +1,23 @@
-"use client"
 import React, { ReactNode } from "react";
 import Image from "next/image";
-import { Sidebar } from "../Sidebar";
-import SingleKondoContent from "../SingleKondoContent";
+import { Sidebar } from "../../Sidebar";
+import SingleKondoContent from "../../SingleKondoContent";
 import { connect } from "react-redux";
-import { selectKondoBySlug } from "@/app/store/selectors/kondos.selector";
+import { selectKondoBySlug } from "@/app/redux-store-bkp/selectors/kondos.selector";
+import { useParams, useSearchParams } from "next/navigation";
+import { useAppSelector } from "@/app/redux-store-bkp/store";
+import { getData, getKondoBySlug } from "@/app/redux-store-bkp/actions/kondos.actions";
+import { KondoLayout } from "@/components/KondoPage/KondoLayout";
 
 // KONDO INTERNAL PAGE LAYOUT
-const layout = ({ children }: { children: ReactNode }, params) => {
-
-  console.log('wtf is params', params);
+//const layout = ({ children }: { children: ReactNode }, props) => {
+  const layout = function ({
+    children,
+  }: {
+    children: React.ReactNode;
+  }, props: any) {
+  
+    console.log('------ Page layout props ', props);
   return (
     <div>
 
@@ -25,7 +33,7 @@ const layout = ({ children }: { children: ReactNode }, params) => {
           />
           <div className="absolute inset-0 bg-black text-white bg-opacity-30 flex flex-col items-center justify-center">
             <h2 className="inline-block align-middle text-5xl font-semibold md:text-7xl ">
-              aeX
+              {props.kondo?.name}
             </h2>
             <span className="block mt-4 text-neutral-300">Frase marcante.</span>
           </div>
@@ -48,15 +56,22 @@ const layout = ({ children }: { children: ReactNode }, params) => {
   );
 };
 
+export default layout;
 
+/*
 const mapStateToProps = (state: any, options: any) => {
   
-  console.log('options .......', options);
-  // TODO: THROW ERROR IF NO SLUG !!
- 
-  const selected = selectKondoBySlug(state, options.params.slug);
+  console.log('single layout mapStateToProps');
 
-  console.log('layout is ', selected);
+  // eslint-disable-next-line react-hooks/rules-of-hooks
+  const { slug } = useParams();
+
+  // eslint-disable-next-line react-hooks/rules-of-hooks
+  //const kondos = useAppSelector((state) => state.kondos.allKondos);
+
+  //var selected = selectKondoBySlug(state, slug[0]);
+
+  console.log('selected from STATE is', selected);
 
   return {
     kondo: selected
@@ -64,4 +79,4 @@ const mapStateToProps = (state: any, options: any) => {
 }
 
 export default connect(mapStateToProps)(layout);
-
+*/

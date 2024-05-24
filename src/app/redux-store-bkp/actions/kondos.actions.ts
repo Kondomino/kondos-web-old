@@ -1,7 +1,9 @@
 "use server"
 import KondosService from "@/services/kondos.service";
-import { CREATE_KONDOS, RETRIEVE_KONDOS, DELETE_ALL_KONDOS, DELETE_KONDOS, UPDATE_KONDOS } from "./types";
+import { CREATE_KONDOS, RETRIEVE_KONDOS, DELETE_ALL_KONDOS, DELETE_KONDOS, UPDATE_KONDOS, POPULATE_KONDOS } from "./types";
 import { KondoModel } from "../models/kondo.model";
+import { useDispatch } from "react-redux";
+import { _populateKondos } from "../reducers/kondo/kondos.reducer";
   
   export const createKONDO = (kondoDTO: KondoModel) => async (dispatch: any) => {
 
@@ -131,12 +133,36 @@ import { KondoModel } from "../models/kondo.model";
 
   export async function getData(endpoint: any) {
     try {
+
       const response = await fetch(endpoint, {
         cache: "no-store"
       });
-      const data = await response.json();
+      return await response.json();
 
-      return data;
+    } catch (error) {
+      console.log('FETCH ERROR', error);
+    }
+  }
+
+  export async function getKondoBySlug(slug: string) {
+    try {
+console.log('getKondoBySlug slug ', slug);
+      const body = { slug: slug };
+      console.log('body is ', body);
+      const response = await fetch('http://localhost:3003/kondo/findBy', {
+        method: "POST",
+        cache: "no-store",
+        mode: "cors",
+        headers: {
+          "Content-Type": "application/json",
+          // 'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: JSON.stringify(body)
+      });
+      const result = response.json();
+
+      console.log('result is ', result);
+      return result;
 
     } catch (error) {
       console.log('FETCH ERROR', error);

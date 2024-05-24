@@ -36,6 +36,7 @@ export interface PostAuthorType {
 
 export interface PostDataType {
   id: string | number;
+  slug: string;
   author: PostAuthorType;
   date: string;
   href: Route;

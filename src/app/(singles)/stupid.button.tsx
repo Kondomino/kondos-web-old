@@ -1,11 +1,10 @@
 import React, { Key } from "react";
-import { useAppDispatch, useAppSelector } from "../store/store";
-import { createKONDO } from "../store/actions/kondos.actions";
+import { useAppDispatch, useAppSelector } from "../redux-store-bkp/store";
+import { createKONDO } from "../redux-store-bkp/actions/kondos.actions";
 import ButtonPrimary from "@/components/Button/ButtonPrimary";
-import { KondoModel } from "../store/models/kondo.model";
-import { _getKondoBySlug } from "../store/reducers/kondo/kondos.reducer";
+import { KondoModel } from "../redux-store-bkp/models/kondo.model";
 import { connect } from "react-redux";
-import { selectKondoBySlug } from "../store/selectors/kondos.selector";
+import { selectKondoBySlug } from "../redux-store-bkp/selectors/kondos.selector";
 
 const StupidButton = (props:any) => {
   
@@ -22,7 +21,7 @@ const StupidButton = (props:any) => {
 
   return (
     <div>
-      Kondo is: {props.kondo.name}
+      
       <ButtonPrimary href="/" className="mt-4" onClick={onCreateKondoClicked}>
           Create Kondo
         </ButtonPrimary>

@@ -11,32 +11,25 @@ import Input from "@/components/Input/Input";
 import NcImage from "@/components/NcImage/NcImage";
 import { ArrowRightIcon } from "@heroicons/react/24/solid";
 import { connect, useDispatch } from "react-redux";
-import { getData, retrieveKONDOs } from "../store/actions/kondos.actions";
-import { RETRIEVE_KONDOS } from "../store/actions/types";
+import { getData, retrieveKONDOs } from "../redux-store-bkp/actions/kondos.actions";
+import { POPULATE_KONDOS, RETRIEVE_KONDOS } from "../redux-store-bkp/actions/types";
 import CardHomeKondos from "@/components/CardHomeKondos/CardHomeKondos";
+import { useAppDispatch } from "../redux-store-bkp/store";
+import { _populateKondos } from "../redux-store-bkp/reducers/kondo/kondos.reducer";
+import { KondoGrid } from "@/components/Kondos/KondoGrid";
 
 // Tag and category have same data type - we will use one demo data
 //const posts: PostDataType[] = DEMO_POSTS.filter((_, i) => i < 16);
 
 // HOME PAGE
+// eslint-disable-next-line @next/next/no-async-client-component
 const PageHome = async (props: any) => {
   
   const endpoint = 'http://localhost:3003/kondo';
-  //const res = await fetch('http://localhost:3003/kondo')
-  //console.log('res is ', res);
-
   const kondos = (await getData(endpoint)) ?? [];
 
   let site_name = "Kondomino";
   let region = "Região de Nova Lima";
-
-  const FILTERS = [
-    { name: "Most Recent" },
-    { name: "Curated by Admin" },
-    { name: "Most Appreciated" },
-    { name: "Most Discussed" },
-    { name: "Most Viewed" },
-  ];
 
   return (
     <div className="nc-PageHome relative">
@@ -111,30 +104,7 @@ const PageHome = async (props: any) => {
       {/* ====================== END HEADER ====================== */}
 
       {/* === GRID's Kondos === */}
-      <div className="container pt-10 pb-16 lg:pb-28 lg:pt-20 space-y-16 lg:space-y-28">
-        <div>
-          <div className="flex flex-col sm:justify-between sm:flex-row">
-            <div className="flex space-x-2.5 rtl:space-x-reverse">
-              <ModalCategories categories={DEMO_CATEGORIES} />
-              <ModalTags tags={DEMO_TAGS} />
-            </div>
-            <div className="block my-4 border-b w-full border-neutral-300 dark:border-neutral-500 sm:hidden"></div>
-            <div className="flex justify-end">
-              <ArchiveFilterListBox lists={FILTERS} />
-            </div>
-          </div>
-
-          {/* LOOP ITEMS */}
-          <CardHomeKondos kondos={kondos} />
-
-          {/* PAGINATIONS */}
-          <div className="flex flex-col mt-12 lg:mt-16 space-y-5 sm:space-y-0 sm:space-x-3 sm:flex-row sm:justify-between sm:items-center">
-            <Pagination />
-            <ButtonPrimary>Show me more</ButtonPrimary>
-          </div>
-        </div>
-
-      </div>
+      <KondoGrid kondos={kondos} />
     </div>
   );
 };

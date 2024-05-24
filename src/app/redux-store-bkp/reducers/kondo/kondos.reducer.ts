@@ -16,9 +16,10 @@ export const kondoSlice = createSlice({
       state.selectedKondo = selected? selected[0] : null;
     },
     _populateKondos: (state, action) => {
-      console.log('_populateKondos', action.payload);
+      console.log('_populateKondos', action.payload.data);
       
-      state.allKondos.push(action.payload);
+      //state.allKondos.push(action.payload);
+      state.allKondos = action.payload.data;
     },
   }
 });
