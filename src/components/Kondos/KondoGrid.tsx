@@ -7,9 +7,6 @@ import ArchiveFilterListBox from "../ArchiveFilterListBox/ArchiveFilterListBox"
 import ButtonPrimary from "../Button/ButtonPrimary"
 import CardHomeKondos from "../CardHomeKondos/CardHomeKondos"
 import Pagination from "../Pagination/Pagination"
-import { POPULATE_KONDOS } from "@/app/redux-store-bkp/actions/types"
-import { _populateKondos } from "@/app/redux-store-bkp/reducers/kondo/kondos.reducer"
-import { useAppDispatch } from "@/app/redux-store-bkp/store"
 
 
 export const KondoGrid: FC<{kondos:[]}> = ({
@@ -24,12 +21,12 @@ export const KondoGrid: FC<{kondos:[]}> = ({
         { name: "Most Viewed" },
       ];
 
-    const dispatch = useAppDispatch();
+    // const dispatch = useAppDispatch();
   
-    dispatch(_populateKondos({
-        type: POPULATE_KONDOS,
-        data: kondos,
-    }));
+    // dispatch(_populateKondos({
+    //     type: POPULATE_KONDOS,
+    //     data: kondos,
+    // }));
     
     return (
         <div className="container pt-10 pb-16 lg:pb-28 lg:pt-20 space-y-16 lg:space-y-28">

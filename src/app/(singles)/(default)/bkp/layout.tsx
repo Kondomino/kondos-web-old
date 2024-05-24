@@ -2,21 +2,20 @@ import React, { ReactNode } from "react";
 import Image from "next/image";
 import { Sidebar } from "../../Sidebar";
 import SingleKondoContent from "../../SingleKondoContent";
-import { connect } from "react-redux";
-import { selectKondoBySlug } from "@/app/redux-store-bkp/selectors/kondos.selector";
-import { useParams, useSearchParams } from "next/navigation";
-import { useAppSelector } from "@/app/redux-store-bkp/store";
-import { getData, getKondoBySlug } from "@/app/redux-store-bkp/actions/kondos.actions";
-import { KondoLayout } from "@/components/KondoPage/KondoLayout";
+import { getKondoBySlug } from "@/hooks/kondos/kondos.actions";
+import { normalizeKondo } from "@/hooks/kondos/useKondos";
 
 // KONDO INTERNAL PAGE LAYOUT
-//const layout = ({ children }: { children: ReactNode }, props) => {
-  const layout = function ({
-    children,
-  }: {
-    children: React.ReactNode;
-  }, props: any) {
+const layout = async ({ params, searchParams }) => {
+//const layout = async ({ children }: { children: ReactNode }) => {
   
+  console.log('LAYOUT params', params);
+  console.log('LAYOUT searchParams', searchParams);
+
+    let kondo = await getKondoBySlug(props.params.slug[0]) ?? [];
+
+    kondo = normalizeKondo(kondo);
+
     console.log('------ Page layout props ', props);
   return (
     <div>
@@ -33,7 +32,7 @@ import { KondoLayout } from "@/components/KondoPage/KondoLayout";
           />
           <div className="absolute inset-0 bg-black text-white bg-opacity-30 flex flex-col items-center justify-center">
             <h2 className="inline-block align-middle text-5xl font-semibold md:text-7xl ">
-              {props.kondo?.name}
+              {kondo?.name}
             </h2>
             <span className="block mt-4 text-neutral-300">Frase marcante.</span>
           </div>
@@ -57,26 +56,3 @@ import { KondoLayout } from "@/components/KondoPage/KondoLayout";
 };
 
 export default layout;
-
-/*
-const mapStateToProps = (state: any, options: any) => {
-  
-  console.log('single layout mapStateToProps');
-
-  // eslint-disable-next-line react-hooks/rules-of-hooks
-  const { slug } = useParams();
-
-  // eslint-disable-next-line react-hooks/rules-of-hooks
-  //const kondos = useAppSelector((state) => state.kondos.allKondos);
-
-  //var selected = selectKondoBySlug(state, slug[0]);
-
-  console.log('selected from STATE is', selected);
-
-  return {
-    kondo: selected
-  }
-}
-
-export default connect(mapStateToProps)(layout);
-*/

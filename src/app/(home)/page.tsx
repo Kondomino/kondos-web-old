@@ -1,22 +1,10 @@
 import React from "react";
-import { DEMO_CATEGORIES, DEMO_TAGS } from "@/data/taxonomies";
-import ModalCategories from "../(archives)/ModalCategories";
-import ModalTags from "../(archives)/ModalTags";
-import ArchiveFilterListBox from "@/components/ArchiveFilterListBox/ArchiveFilterListBox";
-import ButtonPrimary from "@/components/Button/ButtonPrimary";
-import Card11 from "@/components/Card11/Card11";
-import Pagination from "@/components/Pagination/Pagination";
 import ButtonCircle from "@/components/Button/ButtonCircle";
 import Input from "@/components/Input/Input";
 import NcImage from "@/components/NcImage/NcImage";
 import { ArrowRightIcon } from "@heroicons/react/24/solid";
-import { connect, useDispatch } from "react-redux";
-import { getData, retrieveKONDOs } from "../redux-store-bkp/actions/kondos.actions";
-import { POPULATE_KONDOS, RETRIEVE_KONDOS } from "../redux-store-bkp/actions/types";
-import CardHomeKondos from "@/components/CardHomeKondos/CardHomeKondos";
-import { useAppDispatch } from "../redux-store-bkp/store";
-import { _populateKondos } from "../redux-store-bkp/reducers/kondo/kondos.reducer";
 import { KondoGrid } from "@/components/Kondos/KondoGrid";
+import { getData } from "@/hooks/kondos/kondos.actions";
 
 // Tag and category have same data type - we will use one demo data
 //const posts: PostDataType[] = DEMO_POSTS.filter((_, i) => i < 16);

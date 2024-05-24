@@ -1,9 +1,8 @@
 "use client";
 
 import React, { FC, Key } from "react";
-import { _populateKondos } from "@/app/redux-store-bkp/reducers/kondo/kondos.reducer";
 import Card11 from "../Card11/Card11";
-import { normalizeKondos } from "@/app/redux-store-bkp/selectors/kondos.selector";
+import { normalizeKondos } from "@/hooks/kondos/useKondos";
 
 const CardHomeKondos: FC<{kondos:[]}> = ({
   kondos = [],

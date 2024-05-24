@@ -1,7 +1,5 @@
 import Image from "next/image";
 import React from "react";
-import { useAppSelector } from "../redux-store-bkp/store";
-import StupidButton from "./stupid.button";
 
 const KondoContent = () => {
   return (
@@ -14,7 +12,6 @@ const KondoContent = () => {
         suscipit accusantium dignissimos culpa cumque.
       </p>
       <h2>Proximidade</h2>
-      <StupidButton></StupidButton>
       <p>
         A proximidade à BH é de {" "}
         <strong>25 minutos</strong>. 
