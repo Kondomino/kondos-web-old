@@ -11,7 +11,7 @@ import useIntersectionObserver from "@/hooks/useIntersectionObserver";
 import PostCardLikeAction from "@/components/PostCardLikeAction/PostCardLikeAction";
 import PostCardCommentBtn from "@/components/PostCardCommentBtn/PostCardCommentBtn";
 import { ArrowUpIcon } from "@heroicons/react/24/solid";
-import SingleContentKondo from "./KondoContent";
+import SingleContentKondo from "./SingleKondoContentDetails";
 
 const demoTags = DEMO_TAGS.filter((_, i) => i < 9);
 
@@ -78,7 +78,7 @@ const SingleContent: FC<SingleContentProps> = ({}) => {
           className="prose lg:prose-lg !max-w-screen-md mx-auto dark:prose-invert"
           ref={contentRef}
         >
-          <SingleContentKondo />
+          <SingleContentDemo />
         </div>
 
         {/* TAGS */}

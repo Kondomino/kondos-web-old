@@ -4,9 +4,9 @@ import React, { FC } from "react";
 import CategoryBadgeList from "@/components/CategoryBadgeList/CategoryBadgeList";
 import SingleTitle from "./SingleTitle";
 import PostMeta2 from "@/components/PostMeta2/PostMeta2";
-import SingleMetaAction2 from "./SingleMetaAction2";
 import { DEMO_CATEGORIES } from "@/data/taxonomies";
 import SingleMetaActionStandard from "./SingleMetaActionStandard";
+import { PostDataType } from "@/data/types";
 
 export interface SingleHeaderProps {
   hiddenDesc?: boolean;
@@ -29,7 +29,7 @@ const SingleHeader: FC<SingleHeaderProps> = ({
           />
           <SingleTitle
             mainClass={titleMainClass}
-            title={"Ville des Lacs é o encontro do luxo com a modernidade"}
+            title="Title magnific"
           />
           {!hiddenDesc && (
             <span className="block text-base text-neutral-500 md:text-lg dark:text-neutral-400 pb-1">

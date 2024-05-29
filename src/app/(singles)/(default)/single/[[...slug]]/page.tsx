@@ -1,9 +1,10 @@
 import { Sidebar } from "@/app/(singles)/Sidebar";
 import SingleKondoContent from "@/app/(singles)/SingleKondoContent";
-import { KondoSingle } from "@/components/Kondos/KondoSingle";
+import { KondoSingleHeader } from "@/components/Kondos/KondoSingleHeader";
 import NcImage from "@/components/NcImage/NcImage";
 import { getKondoBySlug } from "@/hooks/kondos/kondos.actions";
-import { normalizeKondo, normalizeKondos } from "@/hooks/kondos/useKondos";
+import { normalizeKondo } from "@/hooks/kondos/useKondos";
+import { getCDN } from "@/utils/getCDN";
 import React from "react";
 
 
@@ -30,7 +31,7 @@ const PageSingle = async (props: any) => {
           <NcImage
             alt="archive"
             fill
-            src="https://images.pexels.com/photos/2662116/pexels-photo-2662116.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+            src={getCDN(kondo.featuredImage)}
             className="object-cover w-full h-full rounded-3xl md:rounded-[40px]"
             sizes="(max-width: 1280px) 100vw, 1536px"
           />
@@ -44,18 +45,17 @@ const PageSingle = async (props: any) => {
       </div>
       {/* ====================== END HEADER ====================== */}
       <div className={`pt-8 lg:pt-16`}>
-        <KondoSingle kondo={kondo} />
+        <KondoSingleHeader kondo={kondo} />
       </div>
 
       <div className="container flex flex-col my-10 lg:flex-row ">
         <div className="w-full lg:w-3/5 xl:w-2/3 xl:pe-20">
-          <SingleKondoContent />
+          <SingleKondoContent kondo={kondo} />
         </div>
         <div className="w-full mt-12 lg:mt-0 lg:w-2/5 lg:ps-10 xl:ps-0 xl:w-1/3">
           <Sidebar />
         </div>
       </div>
-
     </div>
   );
 };

@@ -26,7 +26,7 @@ const Card11: FC<Card11Props> = ({
 
   const [isHover, setIsHover] = useState(false);
 
-  function handleSelectedKondo(e) {
+  function handleSelectedKondo(e: any) {
     e.stopPropagation();
     console.log('user selected this kondo ', slug);
   }

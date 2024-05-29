@@ -8,7 +8,7 @@ export const MEGAMENU_TEMPLATES: NavItemType[] = [
   // home pages ---------
   {
     id: randomId(),
-    href: "/#",
+    href: "/",
     name: "Home",
   },
 

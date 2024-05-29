@@ -5,13 +5,16 @@ import Tag from "@/components/Tag/Tag";
 import SingleAuthor from "./SingleAuthor";
 import { DEMO_TAGS } from "@/data/taxonomies";
 import useIntersectionObserver from "@/hooks/useIntersectionObserver";
-import KondoContent from "./KondoContent";
+import SingleKondoContentDetails from "./SingleKondoContentDetails";
+import { PostDataType } from "@/data/types";
 
 const demoTags = DEMO_TAGS.filter((_, i) => i < 9);
 
-export interface SingleKondoContentProps {}
+export interface SingleKondoContentProps {
+  kondo: PostDataType
+}
 
-const SingleKondoContent: FC<SingleKondoContentProps> = ({}) => {
+const SingleKondoContent: FC<SingleKondoContentProps> = ({ kondo }) => {
   const endedAnchorRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
   const progressRef = useRef<HTMLButtonElement>(null);
@@ -72,7 +75,7 @@ const SingleKondoContent: FC<SingleKondoContentProps> = ({}) => {
           className="prose lg:prose-lg !max-w-screen-md mx-auto dark:prose-invert"
           ref={contentRef}
         >
-          <KondoContent />
+          <SingleKondoContentDetails kondo={kondo} />
         </div>
 
         {/* TAGS */}
