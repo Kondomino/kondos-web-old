@@ -1,5 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  //output: 'export',
+  basePath: '/public',
+  distDir: 'build',
+  //basePath: process.env.BASE_PATH,
   experimental: {
     appDir: true,
     typedRoutes: true,
