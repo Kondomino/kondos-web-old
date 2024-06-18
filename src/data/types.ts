@@ -123,7 +123,7 @@ export interface ConvenienceType {
   title: string;
   slug: string;
   featuredImage: string | StaticImageData;
-  type: "basic" | "convenience" | "extra"
+  type: string // "basic" | "convenience" | "extra"
 }
 
 export type TwMainColor =

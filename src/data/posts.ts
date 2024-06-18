@@ -88,7 +88,7 @@ const DEMO_CONVENIENCES = __conveniences.map((post, index): ConvenienceType => {
   return {
     ...post,
     id: `DEMO_CONVENIENCE_${index + 1}`,
-  } as ConvenienceType;
+  } as unknown as ConvenienceType;
 });
 
 export {

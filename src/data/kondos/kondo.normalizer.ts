@@ -4,8 +4,7 @@ import { KondoModel, getFeaturedImage } from "./kondo.model";
 import avatar11 from "@/data/avatars/14.jpg";
 import { KondoDetailsModel } from "./kondo.details.model";
 import { KondoAddressModel } from "./kondo.address.model";
-import { KondoConveniencesBlockModel, KondoConveniencesModel, getConvenienceImage, getConvenienceTitle } from "./kondo.conveniences.model";
-import { getRandomValues } from "crypto";
+import { KondoConveniencesModel, getConvenienceImage, getConvenienceTitle } from "./kondo.conveniences.model";
 import { random } from "lodash";
 
 

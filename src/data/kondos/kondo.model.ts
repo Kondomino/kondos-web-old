@@ -2,7 +2,7 @@ import { PostAuthorType } from "@/data/types";
 import { Model } from "./model";
 import { StaticImageData } from "next/image";
 import { KondoDetailsModel } from "./kondo.details.model";
-import { KondoConveniencesBlockModel, KondoConveniencesFEModel, KondoConveniencesModel } from "./kondo.conveniences.model";
+import { KondoConveniencesModel } from "./kondo.conveniences.model";
 import { KondoAddressModel } from "./kondo.address.model";
 import avatarKondoAAA from "@/data/kondos/mocks/featured/aaa.jpg";
 import avatarKondoBBB from "@/data/kondos/mocks/featured/bbb.jpg";
