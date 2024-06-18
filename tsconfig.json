@@ -15,6 +15,7 @@
     "jsx": "preserve",
     "incremental": true,
     "strictPropertyInitialization": false,
+    "noUnusedLocals": false,
     "plugins": [
       {
         "name": "next"

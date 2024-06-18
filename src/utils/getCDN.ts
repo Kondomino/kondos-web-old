@@ -1,11 +1,10 @@
 
 
-export const getCDN = (imgURL: string) => {
+export const getCDN = (imgURL: any) => {
 
     // development" | "production" | "test
     const env = process.env.NODE_ENV
 
-    console.log('process.env is ', process.env)
     // checks if we are in dev
     if (env === "development")
         return imgURL;

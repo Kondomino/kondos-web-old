@@ -1,5 +1,8 @@
 import { Route } from "@/routers/types";
 import { StaticImageData } from "next/image";
+import { KondoDetailsModel } from "./kondos/kondo.details.model";
+import { KondoConveniencesModel } from "./kondos/kondo.conveniences.model";
+import { KondoAddressModel } from "./kondos/kondo.address.model";
 
 //  ######  CustomLink  ######## //
 export interface CustomLink {
@@ -59,8 +62,14 @@ export interface PostDataType {
   videoUrl?: string;
   audioUrl?: string | string[];
   galleryImgs?: string[];
-  kondoDetails?: KondoDetails;
+  
+  // Kondo
+  details?: KondoDetailsModel;
+  address?: KondoAddressModel;
+  conveniences?: KondoConveniencesModel[];
 }
+
+/*
 export interface KondoDetails {
   active: boolean;
   slug: string;
@@ -105,12 +114,14 @@ export interface KondoDetails {
   email: string;  
   video: string;
 }
+*/
 
 
 export interface ConvenienceType {
   id: string | number;
   href: Route;
   title: string;
+  slug: string;
   featuredImage: string | StaticImageData;
   type: "basic" | "convenience" | "extra"
 }

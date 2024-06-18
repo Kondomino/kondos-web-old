@@ -49,7 +49,7 @@ const Card11: FC<Card11Props> = ({
         onClick={handleSelectedKondo}
         ></Link>
       <span className="absolute top-3 inset-x-3 z-10">
-        {categories.length > 0 &&
+        {categories?.length > 0 &&
           <CategoryBadgeList categories={categories} />
         }
       </span>

@@ -5,25 +5,21 @@ import { ConvenienceType, PostDataType } from "@/data/types";
 import React, { FC } from "react";
 import CardConvenience from "../CardConvenience/CardConvenience";
 
-const widgetConveniencesDemo: ConvenienceType[] = DEMO_CONVENIENCES.filter(
-  (_, i) => i > 2 && i < 7
-);
-
 export interface WidgetConveniencesProps {
   className?: string;
-  posts?: ConvenienceType[];
+  posts: ConvenienceType[];
   title: string;
 }
 
 const WidgetConveniences: FC<WidgetConveniencesProps> = ({
   className = "bg-neutral-100 dark:bg-neutral-800",
-  posts = widgetConveniencesDemo,
+  posts,
   title = "Básicos"
 }) => {
   return (
     <div className={`nc-WidgetPosts rounded-3xl overflow-hidden ${className}`}>
       <WidgetHeading1
-        title={`✨ ${title}`}
+        title={`${title}`}
       />
       <div className="flex flex-col divide-y divide-neutral-200 dark:divide-neutral-700">
         {posts.map((post) => (

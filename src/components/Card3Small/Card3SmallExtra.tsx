@@ -15,7 +15,10 @@ const Card3SmallExtra: FC<Card3SmallExtraProps> = ({ className = "h-full", post 
     <div
       className={`nc-Card3Small relative flex flex-row justify-between items-center ${className}`}
     >
-      <Link href={href} className="absolute inset-0" title={title}></Link>
+      
+      {href && (
+        <Link href={href} className="absolute inset-0" title={title}></Link>
+      )}
       <div className="relative space-y-2">
         <h2 className="nc-card-title block text-sm sm:text-base font-medium sm:font-semibold text-neutral-900 dark:text-neutral-100">
           <Link href={href} className="line-clamp-2" title={title}>

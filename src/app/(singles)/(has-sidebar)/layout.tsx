@@ -13,7 +13,7 @@ const layout = ({ children }: { children: ReactNode }) => {
           <SingleContent />
         </div>
         <div className="w-full mt-12 lg:mt-0 lg:w-2/5 lg:ps-10 xl:ps-0 xl:w-1/3">
-          <Sidebar />
+          {/* <Sidebar /> */}
         </div>
       </div>
 

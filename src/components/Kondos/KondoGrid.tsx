@@ -20,13 +20,6 @@ export const KondoGrid: FC<{kondos:[]}> = ({
         { name: "Most Discussed" },
         { name: "Most Viewed" },
       ];
-
-    // const dispatch = useAppDispatch();
-  
-    // dispatch(_populateKondos({
-    //     type: POPULATE_KONDOS,
-    //     data: kondos,
-    // }));
     
     return (
         <div className="container pt-10 pb-16 lg:pb-28 lg:pt-20 space-y-16 lg:space-y-28">

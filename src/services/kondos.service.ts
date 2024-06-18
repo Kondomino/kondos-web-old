@@ -1,4 +1,4 @@
-import { KondoModel } from "@/hooks/kondos/kondo.model";
+import { KondoModel } from "@/data/kondos/kondo.model";
 import http from "./http-common";
 
 const getAll = () => {

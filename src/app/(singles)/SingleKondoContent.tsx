@@ -86,10 +86,10 @@ const SingleKondoContent: FC<SingleKondoContentProps> = ({ kondo }) => {
         </div>
 
         {/* AUTHOR */}
-        <div className="max-w-screen-md mx-auto border-b border-t border-neutral-100 dark:border-neutral-700"></div>
+        {/* <div className="max-w-screen-md mx-auto border-b border-t border-neutral-100 dark:border-neutral-700"></div>
         <div className="max-w-screen-md mx-auto ">
           <SingleAuthor />
-        </div>
+        </div> */}
       </div>
     </div>
   );

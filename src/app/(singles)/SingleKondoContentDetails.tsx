@@ -16,10 +16,10 @@ export const SingleKondoContentDetails: FC<KondoProps> = ({ kondo }) => {
       <h2>Proximidade</h2>
       <p>
         A proximidade à BH é de {" "}
-        <strong>25 minutos</strong>. 
+        <strong>{kondo.address?.minutes_from_bh} minutos</strong>. 
       </p>
       <p>
-        {kondo.address}
+        {kondo.address?.address_street_and_numbers}
       </p>
       <figure>
         <Image
@@ -31,21 +31,15 @@ export const SingleKondoContentDetails: FC<KondoProps> = ({ kondo }) => {
           height={774}
         />
         <figcaption>
-          O Condomínio {kondo.title} fica no município de {kondo.address}, a {kondo.minutes_from_bh} de BH
+          O Condomínio {kondo.title} fica no município de {kondo.address?.city}, a {kondo.address?.minutes_from_bh} de BH
         </figcaption>
       </figure>
       <p>
-        {` Valor do condomínio: R$ 350,00`}
+        Valor do condomínio: {kondo.details?.condo_rent}
       </p>
       <h2>Lotes</h2>
       <p>
-        Tamanho mínimo dos lotes: 200m²
-      </p>
-      <p>
-        Possui lotes disponíveis? Sim
-      </p>
-      <p>
-        Preço médio dos lotes: R$ 120.000,00
+        Preço médio dos lotes: {kondo.details?.lot_avg_price}
       </p>
     </>
   );

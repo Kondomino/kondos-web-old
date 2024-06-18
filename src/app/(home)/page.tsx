@@ -4,7 +4,8 @@ import Input from "@/components/Input/Input";
 import NcImage from "@/components/NcImage/NcImage";
 import { ArrowRightIcon } from "@heroicons/react/24/solid";
 import { KondoGrid } from "@/components/Kondos/KondoGrid";
-import { getData } from "@/hooks/kondos/kondos.actions";
+import { getData } from "@/data/kondos/kondos.actions";
+import { serializeKondos } from "@/data/kondos/kondo.normalizer";
 
 // Tag and category have same data type - we will use one demo data
 //const posts: PostDataType[] = DEMO_POSTS.filter((_, i) => i < 16);
@@ -14,8 +15,9 @@ import { getData } from "@/hooks/kondos/kondos.actions";
 const PageHome = async (props: any) => {
   
   const endpoint = 'http://localhost:3003/kondo';
-  const kondos = (await getData(endpoint)) ?? [];
-
+  const data = (await getData(endpoint)) ?? [];
+  const kondos = serializeKondos(data);
+  
   let site_name = "Kondomino";
   let region = "Região de Nova Lima";
 

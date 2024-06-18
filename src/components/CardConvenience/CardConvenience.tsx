@@ -11,11 +11,14 @@ export interface CardConvenienceProps {
 const CardConvenience: FC<CardConvenienceProps> = ({ className = "h-full", post }) => {
   const { title, href, featuredImage } = post;
 
+  //console.log('post is ', post);
   return (
     <div
       className={`nc-Card3Small relative flex flex-row justify-between items-center ${className}`}
     >
-      <Link href={href} className="absolute inset-0" title={title}></Link>
+      {href && (
+        <Link href={href} className="absolute inset-0" title={title}></Link>
+      )}
       <div className="relative space-y-2">
         <PostCardMetaConvenience meta={{ ...post }} />
       </div>

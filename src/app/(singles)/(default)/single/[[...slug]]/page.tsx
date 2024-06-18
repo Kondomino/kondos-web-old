@@ -2,8 +2,8 @@ import { Sidebar } from "@/app/(singles)/Sidebar";
 import SingleKondoContent from "@/app/(singles)/SingleKondoContent";
 import { KondoSingleHeader } from "@/components/Kondos/KondoSingleHeader";
 import NcImage from "@/components/NcImage/NcImage";
-import { getKondoBySlug } from "@/hooks/kondos/kondos.actions";
-import { normalizeKondo } from "@/hooks/kondos/useKondos";
+import { normalizeKondo } from "@/data/kondos/kondo.normalizer";
+import { getKondoBySlug } from "@/data/kondos/kondos.actions";
 import { getCDN } from "@/utils/getCDN";
 import React from "react";
 
@@ -13,14 +13,10 @@ import React from "react";
 const PageSingle = async (props: any) => {
 
   //const { slug } = useParams();
-  
-  console.log('PageSingle. props are  ', props);
   let kondo = await getKondoBySlug(props.params.slug[0]) ?? [];
 
-  console.log('kondo fetched is ', kondo);
   kondo = normalizeKondo(kondo);
-  
-  console.log('kondo normalized is ', kondo);
+  //console.log('kondo normalized is ', kondo);
 
   return (
     <div>
@@ -53,7 +49,7 @@ const PageSingle = async (props: any) => {
           <SingleKondoContent kondo={kondo} />
         </div>
         <div className="w-full mt-12 lg:mt-0 lg:w-2/5 lg:ps-10 xl:ps-0 xl:w-1/3">
-          <Sidebar />
+          <Sidebar kondo={kondo} />
         </div>
       </div>
     </div>
