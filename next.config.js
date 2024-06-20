@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   //output: 'export',
-  basePath: '/public',
+  //basePath: '/',
   distDir: 'build',
   //basePath: process.env.BASE_PATH,
   experimental: {
