@@ -3,7 +3,10 @@
 export {
   Transition,
   Dialog,
+  DialogTitle,
+  DialogPanel,
   Disclosure,
+  Description,
   Switch,
   Popover,
   RadioGroup,

@@ -126,19 +126,7 @@ const SiteHeader = () => {
                           <SwitchDarkMode2 />
                         </div>
                       </div>
-                      <div className="bg-gray-50 dark:bg-white/5 p-5">
-                        <a
-                          className="flex items-center justify-center w-full px-4 py-2 !rounded-xl text-sm font-medium bg-primary-6000 text-white hover:bg-primary-700"
-                          href={
-                            "https://themeforest.net/item/ncmaz-blog-news-magazine-nextjs-template/44412092"
-                          }
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          <ShoppingCartIcon className="w-4 h-4" />
-                          <span className="ms-2">Buy this template</span>
-                        </a>
-                      </div>
+                      
                     </div>
                   </Popover.Panel>
                 </Transition>

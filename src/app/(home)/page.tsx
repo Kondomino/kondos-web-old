@@ -3,9 +3,12 @@ import ButtonCircle from "@/components/Button/ButtonCircle";
 import Input from "@/components/Input/Input";
 import NcImage from "@/components/NcImage/NcImage";
 import { ArrowRightIcon } from "@heroicons/react/24/solid";
-import { KondoGrid } from "@/components/Kondos/KondoGrid";
 import { getData } from "@/data/kondos/kondos.actions";
 import { serializeKondos } from "@/data/kondos/kondo.normalizer";
+import { useSearchParams } from "next/navigation";
+import KondoGrid from "../../components/Kondos/KondoGrid";
+import ModalKondoInvestments from "../../components/Kondos/ModalKondoInvestments";
+import ModalConveniences from "../(archives)/ModalConveniences";
 
 // Tag and category have same data type - we will use one demo data
 //const posts: PostDataType[] = DEMO_POSTS.filter((_, i) => i < 16);
@@ -14,7 +17,16 @@ import { serializeKondos } from "@/data/kondos/kondo.normalizer";
 // eslint-disable-next-line @next/next/no-async-client-component
 const PageHome = async (props: any) => {
   
+  console.log('props are', props);
+  const { searchParams } = props;
+
+  const page = searchParams?.page? searchParams?.page : 0;
+  
   const endpoint = 'http://localhost:3003/kondo';
+
+  if (page != 0)
+    endpoint.concat(`?page=${page}`);
+  
   const data = (await getData(endpoint)) ?? [];
   const kondos = serializeKondos(data);
   
@@ -94,7 +106,7 @@ const PageHome = async (props: any) => {
       {/* ====================== END HEADER ====================== */}
 
       {/* === GRID's Kondos === */}
-      <KondoGrid kondos={kondos} />
+      <KondoGrid kondos={kondos}/>
     </div>
   );
 };

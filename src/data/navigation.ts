@@ -5,14 +5,14 @@ import _ from "lodash";
 const randomId = _.uniqueId;
 
 export const MEGAMENU_TEMPLATES: NavItemType[] = [
-  // home pages ---------
+  // HOME PAGES
   {
     id: randomId(),
     href: "/",
     name: "Home",
   },
 
-  // single pages ---------
+  // Condominios
   {
     id: randomId(),
     href: "/single/demo-slug" as Route,
@@ -31,4 +31,11 @@ export const MEGAMENU_TEMPLATES: NavItemType[] = [
       },
     ],
   },
+
+    // ABOUT
+    {
+      id: randomId(),
+      href: "/about",
+      name: "Sobre Nós",
+    },
 ];

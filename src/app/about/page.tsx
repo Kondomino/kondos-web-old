@@ -6,6 +6,8 @@ import SectionStatistic from "./SectionStatistic";
 import SectionSubscribe2 from "@/components/SectionSubscribe2/SectionSubscribe2";
 import BgGlassmorphism from "@/components/BgGlassmorphism/BgGlassmorphism";
 import BackgroundSection from "@/components/BackgroundSection/BackgroundSection";
+import SectionKondoHero from "../../components/SectionHero/SectionKondoHero";
+import PageSponsorship from "../(others)/subscription/sponsorship";
 
 const PageAbout = ({}) => {
   return (
@@ -14,21 +16,20 @@ const PageAbout = ({}) => {
       <BgGlassmorphism />
 
       <div className="container py-16 lg:py-28 space-y-16 lg:space-y-28">
-        <SectionHero
+        <SectionKondoHero
           rightImg={rightImg}
-          heading="👋 About Us."
+          heading="👋 Sobre Nós"
           btnText=""
-          subHeading="We’re impartial and independent, and every day we create distinctive, world-class programmes and content which inform, educate and entertain millions of people in the around the world."
+          subHeading="Nosso objetivo é facilitar a sua vida, criando ferramentas para você encontrar seu imóvel com mais facilidade, transparência e agilidade."
+          text="Não somos uma imobiliária. Somos a mais nova Startup de BH, formada por colegas líderes em diferentes áreas como Tecnologia, Engenharia Ambiental e Direito."
         />
 
         <SectionFounder />
 
         <div className="relative py-16">
           <BackgroundSection />
-          <SectionStatistic />
+          <PageSponsorship />
         </div>
-
-        <SectionSubscribe2 />
       </div>
     </div>
   );

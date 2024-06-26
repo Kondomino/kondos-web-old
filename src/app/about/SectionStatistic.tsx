@@ -12,18 +12,18 @@ const FOUNDER_DEMO: Statistic[] = [
     id: "1",
     heading: "10 million",
     subHeading:
-      "Articles have been public around the world (as of Sept. 30, 2021)",
+      "Unlocking the Basics",
   },
   {
     id: "2",
     heading: "100,000",
-    subHeading: "Registered users account (as of Sept. 30, 2021)",
+    subHeading: "Investor with Care",
   },
   {
     id: "3",
     heading: "220+",
     subHeading:
-      "Countries and regions have our presence (as of Sept. 30, 2021)",
+      "Full Patreon",
   },
 ];
 
@@ -31,10 +31,9 @@ const SectionStatistic = ({}) => {
   return (
     <div className={`nc-SectionStatistic relative`}>
       <Heading
-        desc="We’re impartial and independent, and every day we create distinctive,
-          world-class programmes and content"
+        desc="Temos 3 programas de sponsorship, onde você e sua empresa podem investir em nossa plataforma."
       >
-        🚀 Fast Facts
+        🚀 Patreons
       </Heading>
       <div className="grid md:grid-cols-2 gap-5 lg:grid-cols-3 xl:gap-8">
         {FOUNDER_DEMO.map((item) => (

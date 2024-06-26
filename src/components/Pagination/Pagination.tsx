@@ -1,24 +1,32 @@
+'use client'
 import { CustomLink } from "@/data/types";
 import React, { FC } from "react";
 import twFocusClass from "@/utils/twFocusClass";
 import Link from "next/link";
+import { Route } from "next";
+import { useSearchParam } from "react-use";
+import { useSearchParams } from "next/navigation";
 
 const DEMO_PAGINATION: CustomLink[] = [
   {
     label: "1",
-    href: "/",
+    href: "/?page=1" as Route,
   },
   {
     label: "2",
-    href: "/",
+    href: "/?page=2" as Route,
   },
   {
     label: "3",
-    href: "/",
+    href: "/?page=3" as Route,
   },
   {
     label: "4",
-    href: "/",
+    href: "/?page=4" as Route,
+  },
+  {
+    label: "5",
+    href: "/?page=5" as Route,
   },
 ];
 
@@ -27,8 +35,17 @@ export interface PaginationProps {
 }
 
 const Pagination: FC<PaginationProps> = ({ className = "" }) => {
+
+  const searchParams = Object.fromEntries(useSearchParams());
+
+  var pageNumber = 0;
+
+  if (searchParams && searchParams.page)
+    pageNumber = parseInt(searchParams?.page);
+
+  console.log('page number ', pageNumber);
   const renderItem = (pag: CustomLink, index: number) => {
-    if (index === 0) {
+    if (index+1 === pageNumber) {
       // RETURN ACTIVE PAGINATION
       return (
         <span
@@ -39,7 +56,7 @@ const Pagination: FC<PaginationProps> = ({ className = "" }) => {
         </span>
       );
     }
-    // RETURN UNACTIVE PAGINATION
+    // RETURN UNACTIVE PAGINATION 
     return (
       <Link
         key={index}

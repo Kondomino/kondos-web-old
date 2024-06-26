@@ -32,7 +32,7 @@ export const Sidebar: FC<SidebarProps> = ({
   const conveniencesExtra = filterConvenienceByType(kondo.conveniences, "extra");
 
   // console.log('conveniences filtered are');
-  console.log('basic are', conveniencesBasic);
+  // console.log('basic are', conveniencesBasic);
   // console.log('extra are', conveniencesExtra);
   // console.log('conveniences', conveniencesConveniences);
   // console.log('sec', conveniencesSecurity);

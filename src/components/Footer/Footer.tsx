@@ -2,7 +2,6 @@ import React from "react";
 import Logo from "@/components/Logo/Logo";
 import SocialsList1 from "@/components/SocialsList1/SocialsList1";
 import { CustomLink } from "@/data/types";
-import MusicPlayer from "../MusicPlayer/MusicPlayer";
 
 export interface WidgetFooterMenu {
   id: string;
@@ -84,7 +83,7 @@ const Footer: React.FC = () => {
   return (
     <>
       {/* music player */}
-      <MusicPlayer />
+      {/* <MusicPlayer /> */}
 
       {/* footer */}
       <div className="nc-Footer relative py-16 lg:py-28 border-t border-neutral-200 dark:border-neutral-700">

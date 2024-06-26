@@ -1,4 +1,3 @@
-"use client"
 import ModalCategories from "@/app/(archives)/ModalCategories"
 import ModalTags from "@/app/(archives)/ModalTags"
 import { DEMO_CATEGORIES, DEMO_TAGS } from "@/data/taxonomies"
@@ -7,18 +6,21 @@ import ArchiveFilterListBox from "../ArchiveFilterListBox/ArchiveFilterListBox"
 import ButtonPrimary from "../Button/ButtonPrimary"
 import CardHomeKondos from "../CardHomeKondos/CardHomeKondos"
 import Pagination from "../Pagination/Pagination"
+import { serializeKondos } from "../../data/kondos/kondo.normalizer"
+import { getData } from "../../data/kondos/kondos.actions"
+import ModalConveniences from "../../app/(archives)/ModalConveniences"
 
 
-export const KondoGrid: FC<{kondos:[]}> = ({
-    kondos = [],
-  }) => {
+const KondoGrid: FC<{kondos:[]}> = ({
+  kondos = [],
+}) => {
 
     const FILTERS = [
         { name: "Most Recent" },
-        { name: "Curated by Admin" },
-        { name: "Most Appreciated" },
-        { name: "Most Discussed" },
-        { name: "Most Viewed" },
+        // { name: "Curated by Admin" },
+        // { name: "Most Appreciated" },
+        // { name: "Most Discussed" },
+        // { name: "Most Viewed" },
       ];
     
     return (
@@ -26,8 +28,8 @@ export const KondoGrid: FC<{kondos:[]}> = ({
         <div>
           <div className="flex flex-col sm:justify-between sm:flex-row">
             <div className="flex space-x-2.5 rtl:space-x-reverse">
-              <ModalCategories categories={DEMO_CATEGORIES} />
-              <ModalTags tags={DEMO_TAGS} />
+              <ModalConveniences categories={DEMO_CATEGORIES} />
+              {/* <ModalTags tags={DEMO_TAGS} /> */}
             </div>
             <div className="block my-4 border-b w-full border-neutral-300 dark:border-neutral-500 sm:hidden"></div>
             <div className="flex justify-end">
@@ -41,10 +43,12 @@ export const KondoGrid: FC<{kondos:[]}> = ({
           {/* PAGINATIONS */}
           <div className="flex flex-col mt-12 lg:mt-16 space-y-5 sm:space-y-0 sm:space-x-3 sm:flex-row sm:justify-between sm:items-center">
             <Pagination />
-            <ButtonPrimary>Show me more</ButtonPrimary>
+            {/* <ButtonPrimary>Show me more</ButtonPrimary> */}
           </div>
         </div>
 
       </div>
     );
 }
+
+export default KondoGrid;

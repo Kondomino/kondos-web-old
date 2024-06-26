@@ -1,6 +1,6 @@
 import ButtonPrimary from "@/components/Button/ButtonPrimary";
 import Image, { StaticImageData } from "next/image";
-import React, { FC, ReactNode } from "react";
+import React, { FC, ReactNode, useMemo } from "react";
 
 export interface SectionHeroProps {
   className?: string;
@@ -17,6 +17,14 @@ const SectionHero: FC<SectionHeroProps> = ({
   subHeading,
   btnText,
 }) => {
+
+  const formattedSubHeading = useMemo(() => {
+    //return subHeading.split('\n').join('<br />');
+    //return subHeading.replace(/(?:\r\n|\r|\n)/g, "<br>");
+    return subHeading.replace(new RegExp('\r?\n','g'), '<br />');
+  }, [subHeading]);
+  
+  console.log('formattedSubHeading', formattedSubHeading);
   return (
     <div className={`nc-SectionHero relative ${className}`}>
       <div className="flex flex-col lg:flex-row space-y-14 lg:space-y-0 lg:space-x-10 rtl:space-x-reverse items-center relative text-center lg:text-left">
@@ -25,7 +33,7 @@ const SectionHero: FC<SectionHeroProps> = ({
             {heading}
           </h2>
           <span className="block text-base xl:text-lg text-neutral-6000 dark:text-neutral-400">
-            {subHeading}
+            {formattedSubHeading}
           </span>
           {!!btnText && <ButtonPrimary href="/">{btnText}</ButtonPrimary>}
         </div>
