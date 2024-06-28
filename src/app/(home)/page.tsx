@@ -1,38 +1,28 @@
-import React from "react";
-import ButtonCircle from "@/components/Button/ButtonCircle";
-import Input from "@/components/Input/Input";
+import React, { Suspense } from "react";
 import NcImage from "@/components/NcImage/NcImage";
-import { ArrowRightIcon } from "@heroicons/react/24/solid";
 import { getData } from "@/data/kondos/kondos.actions";
 import { serializeKondos } from "@/data/kondos/kondo.normalizer";
-import { useSearchParams } from "next/navigation";
 import KondoGrid from "../../components/Kondos/KondoGrid";
-import ModalKondoInvestments from "../../components/Kondos/ModalKondoInvestments";
-import ModalConveniences from "../(archives)/ModalConveniences";
+import KondoSearchForm from "../../components/KondoSearch/KondoSearchForm";
+import { redirect, useRouter } from "next/navigation";
 
 // Tag and category have same data type - we will use one demo data
 //const posts: PostDataType[] = DEMO_POSTS.filter((_, i) => i < 16);
 
 // HOME PAGE
 // eslint-disable-next-line @next/next/no-async-client-component
-const PageHome = async (props: any) => {
+export default function Page({
+  params,
+  searchParams,
+}: {
+  params: { slug: string }
+  searchParams: { [key: string]: string | string[] | undefined }
+}) {
   
-  console.log('props are', props);
-  const { searchParams } = props;
+  const urlParams = Object.assign(params, searchParams);
 
-  const page = searchParams?.page? searchParams?.page : 0;
-  
-  const endpoint = 'http://localhost:3003/kondo';
-
-  if (page != 0)
-    endpoint.concat(`?page=${page}`);
-  
-  const data = (await getData(endpoint)) ?? [];
-  const kondos = serializeKondos(data);
-  
   let site_name = "Kondomino";
-  let region = "Região de Nova Lima";
-
+  
   return (
     <div className="nc-PageHome relative">
 
@@ -63,42 +53,8 @@ const PageHome = async (props: any) => {
                 condomínios{" "}
                 </strong>
               </span>
-              <form
-                className="relative w-full mt-8 sm:mt-11 text-left"
-                method="post"
-              >
-                <label
-                  htmlFor="search-input"
-                  className="text-neutral-500 dark:text-neutral-300"
-                >
-                  <span className="sr-only">Search all icons</span>
-                  <Input
-                    id="search-input"
-                    type="search"
-                    placeholder="Type and press enter"
-                    sizeClass="pl-14 py-5 pe-5 md:ps-16"
-                    defaultValue={region}
-                  />
-                  <ButtonCircle
-                    className="absolute end-2.5 top-1/2 transform -translate-y-1/2"
-                    size=" w-11 h-11"
-                    type="submit"
-                  >
-                    <ArrowRightIcon className="w-5 h-5 rtl:rotate-180" />
-                  </ButtonCircle>
-                  <span className="absolute start-5 top-1/2 transform -translate-y-1/2 text-2xl md:start-6">
-                    <svg width="24" height="24" fill="none" viewBox="0 0 24 24">
-                      <path
-                        stroke="currentColor"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="1.5"
-                        d="M19.25 19.25L15.5 15.5M4.75 11C4.75 7.54822 7.54822 4.75 11 4.75C14.4518 4.75 17.25 7.54822 17.25 11C17.25 14.4518 14.4518 17.25 11 17.25C7.54822 17.25 4.75 14.4518 4.75 11Z"
-                      ></path>
-                    </svg>
-                  </span>
-                </label>
-              </form>
+              
+              <KondoSearchForm />
             </header>
           </div>
         </div>
@@ -106,9 +62,9 @@ const PageHome = async (props: any) => {
       {/* ====================== END HEADER ====================== */}
 
       {/* === GRID's Kondos === */}
-      <KondoGrid kondos={kondos}/>
+      <Suspense>
+        <KondoGrid urlParams={urlParams} />
+      </Suspense>
     </div>
   );
 };
-
-export default PageHome;

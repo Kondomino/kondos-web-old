@@ -1,11 +1,16 @@
 "use server"
-import KondosService from "@/services/kondos.service";
   
   export async function getData(endpoint: any) {
     try {
 
       const response = await fetch(endpoint, {
-        cache: "no-store"
+        cache: "no-store",
+        method: "get",
+        mode: "cors",
+        headers: {
+          "Content-Type": "application/json",
+          // 'Content-Type': 'application/x-www-form-urlencoded',
+        },
       });
       return await response.json();
 

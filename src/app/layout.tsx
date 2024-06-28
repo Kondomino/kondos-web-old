@@ -1,5 +1,5 @@
 "use client"
-import "./globals.css";
+import "./ui/globals.css";
 import "@/styles/index.scss";
 import { Poppins } from "next/font/google";
 import Footer from "@/components/Footer/Footer";

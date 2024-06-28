@@ -1,19 +1,29 @@
-import ModalCategories from "@/app/(archives)/ModalCategories"
-import ModalTags from "@/app/(archives)/ModalTags"
-import { DEMO_CATEGORIES, DEMO_TAGS } from "@/data/taxonomies"
+import { DEMO_CATEGORIES } from "@/data/taxonomies"
 import { FC } from "react"
 import ArchiveFilterListBox from "../ArchiveFilterListBox/ArchiveFilterListBox"
-import ButtonPrimary from "../Button/ButtonPrimary"
 import CardHomeKondos from "../CardHomeKondos/CardHomeKondos"
 import Pagination from "../Pagination/Pagination"
 import { serializeKondos } from "../../data/kondos/kondo.normalizer"
 import { getData } from "../../data/kondos/kondos.actions"
 import ModalConveniences from "../../app/(archives)/ModalConveniences"
+import { useSearchParams } from "next/navigation"
 
 
-const KondoGrid: FC<{kondos:[]}> = ({
-  kondos = [],
-}) => {
+const KondoGrid: FC<{urlParams:any}> = async ({urlParams}) => {
+
+  const page = urlParams?.page? urlParams.page : 0;
+  const search = urlParams?.search? urlParams.search : false;
+  
+  var endpoint = 'http://localhost:3003/kondo';
+
+  if (page)
+    endpoint = endpoint.concat(`?page=${page}`);
+
+  if (search)
+    endpoint = endpoint.concat(`?phrase=${search}`);
+
+  const data = (await getData(endpoint)) ?? [];
+  var kondos = serializeKondos(data);
 
     const FILTERS = [
         { name: "Most Recent" },
