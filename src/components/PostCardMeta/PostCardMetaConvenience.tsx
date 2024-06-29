@@ -33,7 +33,7 @@ const PostCardMetaConvenience: FC<PostCardMetaConvenienceProps> = ({
           //size === "large" ? "w-20 h-20" : "w-12 h-12"
           "w-12 h-12"
         } rounded-lg me-4 overflow-hidden`}
-        src={getCDN(featuredImage)}
+        src={featuredImage}
         fill
         className="object-cover"
         sizes="80px"

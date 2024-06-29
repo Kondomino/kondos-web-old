@@ -3,9 +3,10 @@ import SingleKondoContent from "@/app/(singles)/SingleKondoContent";
 import { KondoSingleHeader } from "@/components/Kondos/KondoSingleHeader";
 import NcImage from "@/components/NcImage/NcImage";
 import { normalizeKondo } from "@/data/kondos/kondo.normalizer";
-import { getKondoBySlug } from "@/data/kondos/kondos.actions";
+import { getKondoBySlug, getKondoMedias } from "@/data/kondos/kondos.actions";
 import { getCDN } from "@/utils/getCDN";
-import React from "react";
+import React, { Suspense } from "react";
+import { prepareImages } from "../../../../../data/kondos/kondo.model";
 
 
 // KONDO INTERNAL PAGE CONTENT
@@ -14,10 +15,13 @@ const PageSingle = async (props: any) => {
 
   //const { slug } = useParams();
   let kondo = await getKondoBySlug(props.params.slug[0]) ?? [];
-
   kondo = normalizeKondo(kondo);
-  //console.log('kondo normalized is ', kondo);
 
+  //let IMAGES_GALLERY = await getKondoMedias(kondo.id.toString());
+  let IMAGES_GALLERY = await getKondoMedias('98');
+  IMAGES_GALLERY = prepareImages(kondo.slug, IMAGES_GALLERY);
+
+  console.log('images are', IMAGES_GALLERY);
   return (
     <div>
 
@@ -27,7 +31,7 @@ const PageSingle = async (props: any) => {
           <NcImage
             alt="archive"
             fill
-            src={getCDN(kondo.featuredImage)}
+            src={kondo.featuredImage}
             className="object-cover w-full h-full rounded-3xl md:rounded-[40px]"
             sizes="(max-width: 1280px) 100vw, 1536px"
           />
@@ -41,7 +45,9 @@ const PageSingle = async (props: any) => {
       </div>
       {/* ====================== END HEADER ====================== */}
       <div className={`pt-8 lg:pt-16`}>
-        <KondoSingleHeader kondo={kondo} />
+        <Suspense>
+          <KondoSingleHeader kondo={kondo} images={IMAGES_GALLERY} />
+        </Suspense>
       </div>
 
       <div className="container flex flex-col my-10 lg:flex-row ">

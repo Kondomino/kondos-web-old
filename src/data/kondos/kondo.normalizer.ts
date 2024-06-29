@@ -34,7 +34,7 @@ export function normalizeKondos(kondos: any) {
       normalized.categories = [];
       normalized.author = kondominoAuthor;
       normalized.galleryImgs = ['/public/img/kondos/do-front.jpg'];
-      normalized.featuredImage = getFeaturedImage(dataValues.featuredImage);
+      normalized.featuredImage = getFeaturedImage(dataValues.slug, dataValues.featured_image);
 
       normalized.details = normalizeKondoDetails(details);
 

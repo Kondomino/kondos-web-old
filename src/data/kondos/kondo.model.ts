@@ -98,9 +98,9 @@ export class KondoModel extends Model
 }
 
 
-export function getFeaturedImage(img: string) {
-    const env = process.env.NODE_ENV
-  
+export function getFeaturedImage(slug: string, img: string) {
+    var env = process.env.NODE_ENV
+
     // If local, lets get random image
     if (env == "development") {
       var availableBackgrounds = [
@@ -132,5 +132,22 @@ export function getFeaturedImage(img: string) {
         avatarKondoZZZ,
       ]
       return availableBackgrounds[Math.floor(Math.random()*availableBackgrounds.length)];
+    }
+    else {
+      return process.env.CDN + 'kondos/' + slug + '/' + img;
+    }
+  }
+
+  export function prepareImages(slug: string, images: {id: string, filename:string}[]) {
+    var env = process.env.NODE_ENV
+
+    // If local, lets get random image
+    if (env == "development") {
+      return images;
+    }
+    else {
+      return images.map(item => {
+        return process.env.CDN + 'kondos/' + slug + '/' + item.filename
+      })
     }
   }

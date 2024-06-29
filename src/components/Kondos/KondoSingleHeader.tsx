@@ -8,11 +8,13 @@ import { StaticImageData } from "next/image";
 import { Route } from "next";
 import { PostDataType } from "@/data/types";
 import SingleKondoHeader from "@/app/(singles)/SingleKondoHeader";
+import { getKondoMedias } from "../../data/kondos/kondos.actions";
 
-const IMAGES_GALLERY: (string | StaticImageData)[] = imgHigtQualitys;
+var IMAGES_GALLERY: (string | StaticImageData)[] = imgHigtQualitys;
 
-export const KondoSingleHeader: FC<{kondo: PostDataType}> = ({
+export const KondoSingleHeader: FC<{kondo: PostDataType, images: []}> = ({
     kondo,
+    images
   }) => {
 
     const router = useRouter();
@@ -20,6 +22,8 @@ export const KondoSingleHeader: FC<{kondo: PostDataType}> = ({
     const searchParams = useSearchParams();
     const modal = searchParams?.get("modal");
   
+    IMAGES_GALLERY = images ? images : IMAGES_GALLERY;
+
     const handleCloseModalImageGallery = () => {
         let params = new URLSearchParams(document.location.search);
         params.delete("modal");
@@ -40,11 +44,13 @@ export const KondoSingleHeader: FC<{kondo: PostDataType}> = ({
                 onClick={handleOpenModalImageGallery}
             >
                 <NcImage
-                alt="single"
-                containerClassName="absolute inset-0"
-                className="object-cover w-full h-full rounded-xl"
-                fill
-                src={IMAGES_GALLERY[0]}
+                    alt="single"
+                    containerClassName="absolute inset-0"
+                    className="object-cover w-full h-full rounded-xl"
+                    fill
+                    src={IMAGES_GALLERY[0]}
+                    // width={600}
+                    // height={600}
                 />
                 <div className="absolute inset-0 bg-neutral-900 bg-opacity-20 opacity-0 hover:opacity-100 transition-opacity"></div>
             </div>
@@ -57,11 +63,13 @@ export const KondoSingleHeader: FC<{kondo: PostDataType}> = ({
                     }`}
                 >
                     <NcImage
-                    alt="single"
-                    fill
-                    containerClassName="aspect-w-6 aspect-h-5"
-                    className="object-cover w-full h-full rounded-xl"
-                    src={item || ""}
+                        alt="single"
+                        fill
+                        containerClassName="aspect-w-6 aspect-h-5"
+                        className="object-cover w-full h-full rounded-xl"
+                        src={item || ""}
+                        // width={600}
+                        // height={600}
                     />
 
                     {/* OVERLAY */}

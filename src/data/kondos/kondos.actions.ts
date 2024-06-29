@@ -38,3 +38,24 @@
       console.log('FETCH ERROR', error);
     }
   }
+
+  export async function getKondoMedias(id: string) {
+    try {
+
+      console.log('fetching media for ', id);
+      const response = await fetch(`http://localhost:3003/media/${id}`, {
+        method: "get",
+        cache: "no-store",
+        mode: "cors",
+        headers: {
+          "Content-Type": "application/json",
+          // 'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        //body: JSON.stringify(body)
+      });
+      return await response.json();
+
+    } catch (error) {
+      console.log('FETCH ERROR', error);
+    }
+  }
