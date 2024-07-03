@@ -103,51 +103,60 @@ export function getFeaturedImage(slug: string, img: string) {
 
     // If local, lets get random image
     if (env == "development") {
-      var availableBackgrounds = [
-        avatarKondoAAA,
-        avatarKondoBBB,
-        avatarKondoCCC,
-        avatarKondoDDD,
-        avatarKondoEEE,
-        avatarKondoFFF,
-        avatarKondoGGG,
-        avatarKondoHHH,
-        avatarKondoIII,
-        avatarKondoJJJ,
-        avatarKondoKKK,
-        avatarKondoLLL,
-        avatarKondoMMM,
-        avatarKondoNNN,
-        avatarKondoOOO,
-        avatarKondoPPP,
-        avatarKondoQQQ,
-        avatarKondoRRR,
-        avatarKondoSSS,
-        avatarKondoTTT,
-        avatarKondoUUU,
-        avatarKondoVVV,
-        avatarKondoWWW,
-        avatarKondoXXX,
-        avatarKondoYYY,
-        avatarKondoZZZ,
-      ]
-      return availableBackgrounds[Math.floor(Math.random()*availableBackgrounds.length)];
+      return getRandomImage();
     }
     else {
       return process.env.CDN + 'kondos/' + slug + '/' + img;
     }
   }
 
-  export function prepareImages(slug: string, images: {id: string, filename:string}[]) {
-    var env = process.env.NODE_ENV
+  export function getRandomImages(amount: number) {
 
-    // If local, lets get random image
-    if (env == "development") {
-      return images;
+    let images = [];
+
+    for (let i= 0; i<amount; i++) {
+      images[i] = getRandomImage();
     }
-    else {
-      return images.map(item => {
-        return process.env.CDN + 'kondos/' + slug + '/' + item.filename
-      })
-    }
+
+    return images;
+  }
+
+  export function getRandomImage(){
+
+    var availableImages = [
+      avatarKondoAAA,
+      avatarKondoBBB,
+      avatarKondoCCC,
+      avatarKondoDDD,
+      avatarKondoEEE,
+      avatarKondoFFF,
+      avatarKondoGGG,
+      avatarKondoHHH,
+      avatarKondoIII,
+      avatarKondoJJJ,
+      avatarKondoKKK,
+      avatarKondoLLL,
+      avatarKondoMMM,
+      avatarKondoNNN,
+      avatarKondoOOO,
+      avatarKondoPPP,
+      avatarKondoQQQ,
+      avatarKondoRRR,
+      avatarKondoSSS,
+      avatarKondoTTT,
+      avatarKondoUUU,
+      avatarKondoVVV,
+      avatarKondoWWW,
+      avatarKondoXXX,
+      avatarKondoYYY,
+      avatarKondoZZZ,
+    ]
+    return availableImages[Math.floor(Math.random()*availableImages.length)];
+  }
+
+  export function prepareRealImages(slug: string, images: {id: string, filename:string}[]): (string | StaticImageData)[] {
+
+    return images.map(item => {
+      return process.env.CDN + 'kondos/' + slug + '/' + item.filename
+    })
   }

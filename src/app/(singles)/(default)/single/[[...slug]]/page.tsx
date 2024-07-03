@@ -6,7 +6,7 @@ import { normalizeKondo } from "@/data/kondos/kondo.normalizer";
 import { getKondoBySlug, getKondoMedias } from "@/data/kondos/kondos.actions";
 import { getCDN } from "@/utils/getCDN";
 import React, { Suspense } from "react";
-import { prepareImages } from "../../../../../data/kondos/kondo.model";
+import { prepareRealImages } from "../../../../../data/kondos/kondo.model";
 
 
 // KONDO INTERNAL PAGE CONTENT
@@ -17,11 +17,8 @@ const PageSingle = async (props: any) => {
   let kondo = await getKondoBySlug(props.params.slug[0]) ?? [];
   kondo = normalizeKondo(kondo);
 
-  //let IMAGES_GALLERY = await getKondoMedias(kondo.id.toString());
-  let IMAGES_GALLERY = await getKondoMedias('98');
-  IMAGES_GALLERY = prepareImages(kondo.slug, IMAGES_GALLERY);
-
-  console.log('images are', IMAGES_GALLERY);
+  let IMAGES_GALLERY = await getKondoMedias(kondo.slug, kondo.id)?? [];
+  
   return (
     <div>
 

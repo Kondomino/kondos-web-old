@@ -8,11 +8,10 @@ import { StaticImageData } from "next/image";
 import { Route } from "next";
 import { PostDataType } from "@/data/types";
 import SingleKondoHeader from "@/app/(singles)/SingleKondoHeader";
-import { getKondoMedias } from "../../data/kondos/kondos.actions";
 
 var IMAGES_GALLERY: (string | StaticImageData)[] = imgHigtQualitys;
 
-export const KondoSingleHeader: FC<{kondo: PostDataType, images: []}> = ({
+export const KondoSingleHeader: FC<{kondo: PostDataType, images: (StaticImageData | string)[]}> = ({
     kondo,
     images
   }) => {
@@ -24,6 +23,8 @@ export const KondoSingleHeader: FC<{kondo: PostDataType, images: []}> = ({
   
     IMAGES_GALLERY = images ? images : IMAGES_GALLERY;
 
+    const highlightedImage = IMAGES_GALLERY[0];
+    
     const handleCloseModalImageGallery = () => {
         let params = new URLSearchParams(document.location.search);
         params.delete("modal");
@@ -48,9 +49,7 @@ export const KondoSingleHeader: FC<{kondo: PostDataType, images: []}> = ({
                     containerClassName="absolute inset-0"
                     className="object-cover w-full h-full rounded-xl"
                     fill
-                    src={IMAGES_GALLERY[0]}
-                    // width={600}
-                    // height={600}
+                    src={highlightedImage}
                 />
                 <div className="absolute inset-0 bg-neutral-900 bg-opacity-20 opacity-0 hover:opacity-100 transition-opacity"></div>
             </div>
@@ -68,8 +67,6 @@ export const KondoSingleHeader: FC<{kondo: PostDataType, images: []}> = ({
                         containerClassName="aspect-w-6 aspect-h-5"
                         className="object-cover w-full h-full rounded-xl"
                         src={item || ""}
-                        // width={600}
-                        // height={600}
                     />
 
                     {/* OVERLAY */}

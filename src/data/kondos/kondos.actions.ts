@@ -1,4 +1,8 @@
 "use server"
+
+import { StaticImageData } from "next/image";
+import { getRandomImage, getRandomImages, prepareRealImages } from "./kondo.model";
+
   
   export async function getData(endpoint: any) {
     try {
@@ -39,10 +43,15 @@
     }
   }
 
-  export async function getKondoMedias(id: string) {
+  export async function getKondoMedias(slug: string, id: string) {
+    
+    console.log('env is ', process.env.NODE_ENV);
+    
+    if (process.env.NODE_ENV == 'development')
+      return getRandomImages(6);
+
     try {
 
-      console.log('fetching media for ', id);
       const response = await fetch(`http://localhost:3003/media/${id}`, {
         method: "get",
         cache: "no-store",
@@ -53,7 +62,13 @@
         },
         //body: JSON.stringify(body)
       });
-      return await response.json();
+
+      const data = await response.json();
+
+      if (!data || data.length <= 0 )
+        return [];
+      
+      return prepareRealImages(slug, data);
 
     } catch (error) {
       console.log('FETCH ERROR', error);
