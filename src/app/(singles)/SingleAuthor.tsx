@@ -26,7 +26,7 @@ const SingleAuthor: FC<SingleAuthorProps> = ({ author = DEMO_AUTHORS[1] }) => {
           <Link href={author.href}>{author.displayName}</Link>
         </h2>
         <span className="block mt-1 text-sm text-neutral-500 sm:text-base dark:text-neutral-300">
-          {author.desc}
+          {author.description}
           <Link
             className="text-primary-6000 font-medium ml-1"
             href={author.href}

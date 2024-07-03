@@ -8,7 +8,7 @@ export interface PricingItem {
   isPopular: boolean;
   name: string;
   pricing: string;
-  desc: string;
+  description: string;
   per: string;
   features: string[];
 }
@@ -20,7 +20,7 @@ const pricings: PricingItem[] = [
     pricing: "$5",
     per: "/mo",
     features: ["Automated Reporting", "Faster Processing", "Customizations"],
-    desc: ` Literally you probably haven't heard of them jean shorts.`,
+    description: ` Literally you probably haven't heard of them jean shorts.`,
   },
   {
     isPopular: true,
@@ -33,7 +33,7 @@ const pricings: PricingItem[] = [
       "Progress Reports",
       "Premium Support",
     ],
-    desc: ` Literally you probably haven't heard of them jean shorts.`,
+    description: ` Literally you probably haven't heard of them jean shorts.`,
   },
   {
     isPopular: false,
@@ -46,7 +46,7 @@ const pricings: PricingItem[] = [
       "Advanced Analytics",
       "Company Evaluations",
     ],
-    desc: ` Literally you probably haven't heard of them jean shorts.`,
+    description: ` Literally you probably haven't heard of them jean shorts.`,
   },
 ];
 
@@ -98,7 +98,7 @@ const PageSubcription = ({}) => {
             </ButtonSecondary>
           )}
           <p className="text-xs text-neutral-500 dark:text-neutral-400 mt-3">
-            {pricing.desc}
+            {pricing.description}
           </p>
         </div>
       </div>

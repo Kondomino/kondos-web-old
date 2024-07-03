@@ -15,7 +15,7 @@ export interface PricingItem {
   isPopular: boolean;
   name: string;
   pricing: string;
-  desc: string;
+  description: string;
   per: string;
   features: string[];
 }
@@ -27,7 +27,7 @@ const pricings: PricingItem[] = [
     pricing: "R$ 19",
     per: "/mês",
     features: ["Participa dos Debates", "Proporciona o Investimento Básico", "Badge de Apoiador"],
-    desc: ` Você apoia com o mínimo para que o projeto ganhe força`,
+    description: ` Você apoia com o mínimo para que o projeto ganhe força`,
   },
   {
     isPopular: true,
@@ -40,7 +40,7 @@ const pricings: PricingItem[] = [
       "Notificado de novos condomínios Premium em destaque",
       "Badge de Believer",
     ],
-    desc: ` Seus esforços começam a ganhar notoriedade.`,
+    description: ` Seus esforços começam a ganhar notoriedade.`,
   },
   {
     isPopular: false,
@@ -54,7 +54,7 @@ const pricings: PricingItem[] = [
       "Acesso BETA às novas features",
       "Badge de Investidor",
     ],
-    desc: ` Você é visto como um dos Investidores do projeto.`,
+    description: ` Você é visto como um dos Investidores do projeto.`,
   },
 ];
 
@@ -106,7 +106,7 @@ const PageSponsorship = ({}) => {
             <ModalKondoInvestments plan={pricing.name}/>
           )}
           <p className="text-xs text-neutral-500 dark:text-neutral-400 mt-3">
-            {pricing.desc}
+            {pricing.description}
           </p>
         </div>
       </div>

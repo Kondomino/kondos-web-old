@@ -44,7 +44,7 @@ const SectionFounder = () => {
   return (
     <div className="nc-SectionFounder relative">
       <Heading
-        desc="Somos imparciais e independentes, e criamos diariamente ferramentas exclusivas, para sua melhor experiência.
+        description="Somos imparciais e independentes, e criamos diariamente ferramentas exclusivas, para sua melhor experiência.
           "
       >
         ⛱ Fundadores

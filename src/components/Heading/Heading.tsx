@@ -2,13 +2,13 @@ import React, { HTMLAttributes, ReactNode } from "react";
 
 export interface HeadingProps extends HTMLAttributes<HTMLHeadingElement> {
   fontClass?: string;
-  desc?: ReactNode;
+  description?: ReactNode;
   isCenter?: boolean;
 }
 
 const Heading: React.FC<HeadingProps> = ({
   children,
-  desc = "Descubra os condomínios mais incríveis para morar ou investir ",
+  description = "Descubra os condomínios mais incríveis para morar ou investir ",
   className = "mb-10 md:mb-12 text-neutral-900 dark:text-neutral-50",
   isCenter = false,
   ...args
@@ -28,9 +28,9 @@ const Heading: React.FC<HeadingProps> = ({
         >
           {children || `Section Heading`}
         </h2>
-        {desc && (
+        {description && (
           <span className="mt-2 md:mt-3 font-normal block text-base sm:text-xl text-neutral-500 dark:text-neutral-400">
-            {desc}
+            {description}
           </span>
         )}
       </div>

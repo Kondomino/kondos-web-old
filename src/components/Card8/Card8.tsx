@@ -11,7 +11,7 @@ export interface Card8Props {
 }
 
 const Card8: FC<Card8Props> = ({ className = "h-full", post }) => {
-  const { title, href, featuredImage, desc, categories, postType } = post;
+  const { title, href, featuredImage, description, categories, postType } = post;
 
   return (
     <div
@@ -50,7 +50,7 @@ const Card8: FC<Card8Props> = ({ className = "h-full", post }) => {
           </Link>
         </h2>
         <div className="hidden sm:block mt-2">
-          <span className="text-neutral-300 text-sm line-clamp-1">{desc}</span>
+          <span className="text-neutral-300 text-sm line-clamp-1">{description}</span>
         </div>
       </div>
     </div>

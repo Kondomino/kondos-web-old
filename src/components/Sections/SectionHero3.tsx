@@ -13,7 +13,7 @@ export interface SectionHero3Props {
 
 const SectionHero3: FC<SectionHero3Props> = ({ posts, className = "" }) => {
   const renderMain = () => {
-    const { featuredImage, title, desc, href } = posts[0];
+    const { featuredImage, title, description, href } = posts[0];
     return (
       <div className="aspect-h-8 aspect-w-8 sm:aspect-w-10 lg:aspect-w-16 ">
         <NcImage
@@ -30,7 +30,7 @@ const SectionHero3: FC<SectionHero3Props> = ({ posts, className = "" }) => {
               <span className="line-clamp-2">{title}</span>
             </h2>
             <span className="block text-sm sm:text-base text-neutral-300 mt-3 sm:mt-5">
-              <span className="line-clamp-2">{desc}</span>
+              <span className="line-clamp-2">{description}</span>
             </span>
             <div className="mt-5 sm:mt-8">
               <ButtonSecondary href={href}>

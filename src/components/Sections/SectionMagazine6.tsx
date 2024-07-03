@@ -21,7 +21,7 @@ const SectionMagazine6: FC<SectionMagazine6Props> = ({
   className = "",
 }) => {
   const renderMain = () => {
-    const { featuredImage, author, title, date, desc, href, readingTime } =
+    const { featuredImage, author, title, date, description, href, readingTime } =
       posts[0];
     const subPosts = posts.filter((_, i) => i > 0);
     return (
@@ -48,7 +48,7 @@ const SectionMagazine6: FC<SectionMagazine6Props> = ({
                 </Link>
               </h2>
               <span className="hidden lg:block text-base text-neutral-200 mt-5">
-                {desc}
+                {description}
               </span>
             </div>
 

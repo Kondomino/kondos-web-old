@@ -45,8 +45,6 @@ import { getRandomImage, getRandomImages, prepareRealImages } from "./kondo.mode
 
   export async function getKondoMedias(slug: string, id: string) {
     
-    console.log('env is ', process.env.NODE_ENV);
-    
     if (process.env.NODE_ENV == 'development')
       return getRandomImages(6);
 

@@ -11,7 +11,7 @@ export interface Card13Props {
 }
 
 const Card13: FC<Card13Props> = ({ className = "", post }) => {
-  const { title, href, desc, featuredImage, date, postType } = post;
+  const { title, href, description, featuredImage, date, postType } = post;
 
   return (
     <div className={`nc-Card13 relative flex justify-between ${className}`}>
@@ -24,7 +24,7 @@ const Card13: FC<Card13Props> = ({ className = "", post }) => {
           </Link>
         </h2>
         <span className="hidden sm:block my-3 text-neutral-500 dark:text-neutral-400 ">
-          <span className="line-clamp-2"> {desc}</span>
+          <span className="line-clamp-2"> {description}</span>
         </span>
         <span className="mt-4 block sm:hidden text-xs text-neutral-500 ">
           {date}

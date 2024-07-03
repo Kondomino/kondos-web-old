@@ -80,7 +80,7 @@ const SectionGridPosts: FC<SectionGridPostsProps> = ({
 
   return (
     <div className={`nc-SectionGridPosts relative ${className}`}>
-      <Heading desc={subHeading} isCenter={headingIsCenter}>
+      <Heading description={subHeading} isCenter={headingIsCenter}>
         {heading}
       </Heading>
       <div className={`grid gap-6 md:gap-8 ${gridClass}`}>

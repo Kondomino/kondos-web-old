@@ -22,7 +22,7 @@ const Card16Podcast: FC<Card16PodcastProps> = ({
   post,
   ratio = "aspect-w-3 xl:aspect-w-4 aspect-h-3",
 }) => {
-  const { title, href, categories, desc, featuredImage, postType } = post;
+  const { title, href, categories, description, featuredImage, postType } = post;
   const IS_AUDIO = postType === "audio";
 
   const renderListenButtonDefault = (state?: "playing") => {
@@ -84,7 +84,7 @@ const Card16Podcast: FC<Card16PodcastProps> = ({
             </Link>
           </h2>
           <span className="block text-sm text-neutral-500 dark:text-neutral-400 mt-3 mb-5">
-            <span className="line-clamp-2">{desc}</span>
+            <span className="line-clamp-2">{description}</span>
           </span>
           <div className="flex items-end justify-between mt-auto">
             <PostCardLikeAndComment className="relative" />

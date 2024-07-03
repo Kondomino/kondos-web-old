@@ -24,7 +24,7 @@ const Card2: FC<Card2Props> = ({
     href,
     readingTime,
     featuredImage,
-    desc,
+    description,
     categories,
     postType,
   } = post;

@@ -26,10 +26,10 @@ const PageAbout = ({}) => {
 
         <SectionFounder />
 
-        <div className="relative py-16">
+        {/* <div className="relative py-16">
           <BackgroundSection />
           <PageSponsorship />
-        </div>
+        </div> */}
       </div>
     </div>
   );

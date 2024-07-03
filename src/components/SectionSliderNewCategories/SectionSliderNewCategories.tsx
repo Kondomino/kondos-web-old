@@ -47,7 +47,7 @@ const SectionSliderNewCategories: FC<SectionSliderNewCategoriesProps> = ({
 
   return (
     <div className={`nc-SectionSliderNewCategories ${className}`}>
-      <Heading desc={subHeading}>{heading}</Heading>
+      <Heading description={subHeading}>{heading}</Heading>
       <MySlider
         data={categories}
         renderItem={(item, indx) => renderCard(item, indx)}

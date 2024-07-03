@@ -36,7 +36,7 @@ const PageSingle = async (props: any) => {
             <h2 className="inline-block align-middle text-5xl font-semibold md:text-7xl ">
               {kondo?.name}
             </h2>
-            <span className="block mt-4 text-neutral-300">Frase marcante.</span>
+            <span className="block mt-4 text-neutral-300">{kondo.infra_description}</span>
           </div>
         </div>
       </div>

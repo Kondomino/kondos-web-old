@@ -19,7 +19,7 @@ const Card3: FC<Card3Props> = ({ className = "h-full", post }) => {
     href,
     readingTime,
     featuredImage,
-    desc,
+    description,
     categories,
     postType,
   } = post;
@@ -41,7 +41,7 @@ const Card3: FC<Card3Props> = ({ className = "h-full", post }) => {
             </h2>
             <div className="hidden sm:block sm:mt-2">
               <span className="text-neutral-500 dark:text-neutral-400 text-sm line-clamp-2">
-                {desc}
+                {description}
               </span>
             </div>
           </Link>

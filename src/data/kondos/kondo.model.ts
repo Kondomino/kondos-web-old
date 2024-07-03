@@ -43,9 +43,7 @@ export class KondoModel extends Model
     
     name?: string;
     title?: string;
-
     active?: boolean;
-
     slug?: string;
 
     /*
@@ -57,7 +55,8 @@ export class KondoModel extends Model
     //categories: TaxonomyType[];
     categories?: any[] = [];
     featuredImage?: string | StaticImageData | undefined;
-    desc?: string;
+    description?: string;
+    infraDescription?: string;
     like?: {
         count: number;
         isLiked: boolean;
@@ -79,21 +78,12 @@ export class KondoModel extends Model
     */
 
     type?: string;
-    
-    description?: string;
-
     details: KondoDetailsModel;
-    
     conveniences: KondoConveniencesModel[];
-
     address: KondoAddressModel;
-
     url?: string; // Condominium Page
-
     phone?: string;
-
     email?: string;
-    
     video?: string;
 }
 

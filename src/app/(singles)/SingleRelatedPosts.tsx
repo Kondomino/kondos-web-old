@@ -41,7 +41,7 @@ const SingleRelatedPosts: FC<SingleRelatedPostsProps> = ({
         <div>
           <Heading
             className="mb-10 text-neutral-900 dark:text-neutral-50"
-            desc=""
+            description=""
           >
             Related posts
           </Heading>
@@ -56,7 +56,7 @@ const SingleRelatedPosts: FC<SingleRelatedPostsProps> = ({
         <div className="mt-20">
           <Heading
             className="mb-10 text-neutral-900 dark:text-neutral-50"
-            desc=""
+            description=""
           >
             More from author
           </Heading>

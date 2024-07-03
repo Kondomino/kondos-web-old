@@ -18,7 +18,7 @@ export interface TaxonomyType {
   href: Route;
   count?: number;
   thumbnail?: string | StaticImageData;
-  desc?: string;
+  description?: string;
   color?: TwMainColor | string;
   taxonomy: "category" | "tag";
 }
@@ -32,7 +32,7 @@ export interface PostAuthorType {
   bgImage?: string | StaticImageData;
   email?: string;
   count: number;
-  desc: string;
+  description: string;
   jobName: string;
   href: Route;
 }
@@ -46,7 +46,7 @@ export interface PostDataType {
   categories: TaxonomyType[];
   title: string;
   featuredImage: string | StaticImageData;
-  desc?: string;
+  description?: string;
   like: {
     count: number;
     isLiked: boolean;

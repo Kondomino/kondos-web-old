@@ -31,7 +31,7 @@ const SectionStatistic = ({}) => {
   return (
     <div className={`nc-SectionStatistic relative`}>
       <Heading
-        desc="Temos 3 programas de sponsorship, onde você e sua empresa podem investir em nossa plataforma."
+        description="Temos 3 programas de sponsorship, onde você e sua empresa podem investir em nossa plataforma."
       >
         🚀 Patreons
       </Heading>

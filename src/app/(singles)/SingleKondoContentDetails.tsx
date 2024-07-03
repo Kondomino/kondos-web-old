@@ -11,7 +11,7 @@ export const SingleKondoContentDetails: FC<KondoProps> = ({ kondo }) => {
     <>
       {/* THIS IS THE DEMP CONTENT - YOU CAN USE MARKDOWN, JSON ...*/}
       <p>
-        {kondo.desc}
+        {kondo.description}
       </p>
       <h2>Proximidade</h2>
       <p>

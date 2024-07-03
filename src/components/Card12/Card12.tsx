@@ -11,7 +11,7 @@ export interface Card12Props {
 }
 
 const Card12: FC<Card12Props> = ({ className = "h-full", post }) => {
-  const { title, href, featuredImage, desc, postType } = post;
+  const { title, href, featuredImage, description, postType } = post;
 
   return (
     <div className={`nc-Card12 group relative flex flex-col ${className}`}>
@@ -44,7 +44,7 @@ const Card12: FC<Card12Props> = ({ className = "h-full", post }) => {
           </Link>
         </h2>
         <span className="hidden sm:block mt-4 text-neutral-500 dark:text-neutral-400">
-          <span className="line-clamp-2"> {desc}</span>
+          <span className="line-clamp-2"> {description}</span>
         </span>
         <PostCardMeta className="mt-5 text-sm" meta={post} />
       </div>

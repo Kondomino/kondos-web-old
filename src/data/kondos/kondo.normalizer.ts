@@ -38,6 +38,7 @@ export function normalizeKondos(kondos: any) {
 
       normalized.details = normalizeKondoDetails(details);
 
+      normalized.infraDescription = dataValues.infra_description;
       normalized.address = address;
       normalized.address.minutes_from_bh = normalized.address.minutes_from_bh? normalized.address.minutes_from_bh : '?' ;
 
@@ -125,6 +126,6 @@ export function normalizeKondos(kondos: any) {
     bgImage: "/public/img/maps.png",
     count: 40,
     href: "/something" as Route,
-    desc: "There’s no stopping the tech giant. Apple now opens its 100th store in China.There’s no stopping the tech giant.",
+    description: "There’s no stopping the tech giant. Apple now opens its 100th store in China.There’s no stopping the tech giant.",
     jobName: "Founder, CEO",
   };
