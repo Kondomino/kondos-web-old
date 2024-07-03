@@ -21,6 +21,22 @@ export default function Page({
   
   const urlParams = Object.assign(params, searchParams);
 
+  let type = urlParams?.type? urlParams.type : 'condomínios';
+  let typeFormated = 'condomínios';
+  let background = 'https://images.pexels.com/photos/2662116/pexels-photo-2662116.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260';
+
+  if (type) {
+    if (type == 'chacaras') {
+      typeFormated = 'Chácaras';
+      background = 'https://images.pexels.com/photos/2138922/pexels-photo-2138922.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260';
+      
+    }
+    if (type == 'predios') {
+      typeFormated = 'Prédios';
+      background = 'https://kondo-medias.s3.amazonaws.com/kondos/kondo/background-predios.jpg';
+    }
+  }
+
   let site_name = "Kondomino";
   
   return (
@@ -33,7 +49,7 @@ export default function Page({
             alt="search"
             fill
             containerClassName="absolute inset-0"
-            src="https://images.pexels.com/photos/2138922/pexels-photo-2138922.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+            src={background}
             className="object-cover w-full h-full"
             sizes="(max-width: 1280px) 100vw, 1536px"
           />
@@ -46,11 +62,11 @@ export default function Page({
               <span className="block text-xs sm:text-sm mt-4 text-neutral-500 dark:text-neutral-300">
                 Compare entre {" "}
                 <strong className="font-medium text-neutral-800 dark:text-neutral-100">
-                  1135
+                  234
                 </strong>{" "}
                 {" "}
                 <strong className="font-medium text-neutral-800 dark:text-neutral-100">
-                condomínios{" "}
+                {typeFormated} {" "}
                 </strong>
               </span>
               

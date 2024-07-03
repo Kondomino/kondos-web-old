@@ -15,19 +15,27 @@ export const MEGAMENU_TEMPLATES: NavItemType[] = [
   // Condominios
   {
     id: randomId(),
-    href: "/single/demo-slug" as Route,
+    href: "/" as Route,
     name: "Condomínios",
     type: "dropdown",
     children: [
       {
         id: randomId(),
-        href: "/single/demo-slug" as Route,
-        name: "Casas e Lotes",
+        href: "/" as Route,
+        query: "type=casas",
+        name: "Casas",
       },
       {
         id: randomId(),
-        href: "/single-2/demo-slug" as Route,
+        href: "/" as Route,
+        query: "type=chacaras",
         name: "Chácaras",
+      },
+      {
+        id: randomId(),
+        href: "/" as Route,
+        query: "type=predios",
+        name: "Prédios",
       },
     ],
   },

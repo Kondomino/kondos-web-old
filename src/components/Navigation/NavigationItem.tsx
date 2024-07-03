@@ -15,6 +15,7 @@ export interface NavItemType {
   children?: NavItemType[];
   type?: "dropdown" | "megaMenu" | "none";
   isNew?: boolean;
+  query?: string
 }
 
 export interface NavigationItemProps {
@@ -67,11 +68,8 @@ const NavigationItem: FC<NavigationItemProps> = ({ menuItem }) => {
   const renderMegaMenu = (menu: NavItemType) => {
     
     if (!menu.children) {
-      console.log('menu children is empty')
       return null;
     }
-
-    console.log('menu children is ', menu.children);
     
     return (
       <li
@@ -158,6 +156,7 @@ const NavigationItem: FC<NavigationItemProps> = ({ menuItem }) => {
           className="font-normal text-slate-600 hover:text-black dark:text-slate-400 dark:hover:text-white "
           href={{
             pathname: item.href || undefined,
+            query: item.query
           }}
         >
           {item.name}
@@ -275,6 +274,7 @@ const NavigationItem: FC<NavigationItemProps> = ({ menuItem }) => {
         className="flex items-center font-normal text-neutral-6000 dark:text-neutral-400 py-2 px-4 rounded-md hover:text-neutral-700 hover:bg-neutral-100 dark:hover:bg-neutral-800 dark:hover:text-neutral-200"
         href={{
           pathname: item.href || undefined,
+          query: item.query
         }}
       >
         {item.name}
