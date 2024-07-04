@@ -26,10 +26,14 @@ export default function Page({
   let background = 'https://images.pexels.com/photos/2662116/pexels-photo-2662116.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260';
 
   if (type) {
+    if (type == 'casas') {
+      typeFormated = 'Casas';
+      background = 'https://kondo-medias.s3.amazonaws.com/kondos/kondo/background-casas.jpg';
+    }
     if (type == 'chacaras') {
       typeFormated = 'Chácaras';
-      background = 'https://images.pexels.com/photos/2138922/pexels-photo-2138922.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260';
-      
+      //background = 'https://images.pexels.com/photos/2138922/pexels-photo-2138922.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260';
+      background = 'https://kondo-medias.s3.amazonaws.com/kondos/kondo/background-chacaras.jpg';
     }
     if (type == 'predios') {
       typeFormated = 'Prédios';
