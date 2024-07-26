@@ -43,7 +43,6 @@ const Pagination: FC<PaginationProps> = ({ className = "" }) => {
   if (searchParams && searchParams.page)
     pageNumber = parseInt(searchParams?.page);
 
-  console.log('page number ', pageNumber);
   const renderItem = (pag: CustomLink, index: number) => {
     if (index+1 === pageNumber) {
       // RETURN ACTIVE PAGINATION

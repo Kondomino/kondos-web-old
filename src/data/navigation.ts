@@ -44,6 +44,6 @@ export const MEGAMENU_TEMPLATES: NavItemType[] = [
     {
       id: randomId(),
       href: "/about",
-      name: "Sobre Nós",
+      name: "Sobre",
     },
 ];

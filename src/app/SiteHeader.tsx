@@ -1,7 +1,7 @@
 "use client";
 
-import React, { Fragment, useEffect, useMemo, useState } from "react";
-import { usePathname } from "next/navigation";
+import React, { Fragment, useContext, useEffect, useMemo, useState } from "react";
+import { usePathname, useSearchParams } from "next/navigation";
 import HeaderLogged from "@/components/Header/HeaderLogged";
 import Header from "@/components/Header/Header";
 import Header2 from "@/components/Header/Header2";
@@ -12,13 +12,34 @@ import {
 import { Popover, Transition } from "@headlessui/react";
 import SwitchDarkMode2 from "@/components/SwitchDarkMode/SwitchDarkMode2";
 import { useThemeMode } from "@/hooks/useThemeMode";
+import { getClientSideCookie } from "../utils/cookies";
+import { getCurrentUser } from "../data/users/users.actions";
+import { GlobalContext } from "../components/GlobalState/GlobalState";
 
+// export async function getSessionData(req?: any) {
+//   const encryptedSessionData = cookies().get('ksession')?.value
+//   return encryptedSessionData ? JSON.parse(decrypt(encryptedSessionData)) : null
+// }
+
+function isUserLoggedIn() {
+  return false;
+}
+
+// eslint-disable-next-line @next/next/no-async-client-component
 const SiteHeader = () => {
   let pathname = usePathname();
-  useThemeMode();
-  //
+  
+  const searchParams = useSearchParams()
+  const token = searchParams.get('token')
 
-  //
+  useThemeMode();
+
+  // @ts-ignore
+  //const user = await getCurrentUser(token);
+  //const cookies = getClientSideCookie('ksession');
+  //console.log('cookies are ', cookies);
+  //console.log('token is ', token);
+
   // FOR OUR DEMO PAGE, use do not use this, you can delete it.
   const [headerSelected, setHeaderSelected] = useState<
     "Header 1" | "Header 2" | "Header 3"
@@ -37,7 +58,10 @@ const SiteHeader = () => {
     };
   }, [themeDir]);
 
-  //
+  // @ts-ignore
+  const { isAuthUser } = useContext(GlobalContext);
+  
+  let headerComponent = isAuthUser === null? <Header2 />: <HeaderLogged />;
 
   const renderRadioThemeDir = () => {
     return (
@@ -139,24 +163,32 @@ const SiteHeader = () => {
   };
   //
 
+  /*
   const headerComponent = useMemo(() => {
-    let HeadComponent = HeaderLogged;
-    if (pathname === "/home-2" || headerSelected === "Header 2") {
-      HeadComponent = Header;
-    }
-    if (pathname === "/home-3" || headerSelected === "Header 3") {
+    
+    let HeadComponent = null;
+    //let HeadComponent = HeaderLogged;
+    // if (pathname === "/home-2" || headerSelected === "Header 2") {
+    //   HeadComponent = Header;
+    // }
+    // if (pathname === "/home-3" || headerSelected === "Header 3") {
+    //   HeadComponent = Header2;
+    // }
+    console.log('Site Header isAuthUser', isAuthUser);
+    if (isAuthUser)
+      HeadComponent = HeaderLogged;
+    else
       HeadComponent = Header2;
-    }
 
     return <HeadComponent />;
-  }, [pathname, headerSelected]);
-
+  }, [isAuthUser]);
+*/
   return (
     <>
       {/* for our demo page, please delete this if you do not use */}
       {renderControlSelections()}
       {/*  */}
-
+      
       {headerComponent}
     </>
   );

@@ -72,3 +72,26 @@ import { getRandomImage, getRandomImages, prepareRealImages } from "./kondo.mode
       console.log('FETCH ERROR', error);
     }
   }
+
+  
+  export async function likeKondo(slug: string, userId: number) {
+    try {
+      const body = { slug: slug };
+      const endpoint = 'http://localhost:3003/likes/kondo/';
+
+      const response = await fetch(endpoint + userId, {
+        method: "POST",
+        cache: "no-store",
+        mode: "cors",
+        headers: {
+          "Content-Type": "application/json",
+          // 'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: JSON.stringify(body)
+      });
+      return await response.json();
+
+    } catch (error) {
+      console.log('FETCH ERROR', error);
+    }
+  }

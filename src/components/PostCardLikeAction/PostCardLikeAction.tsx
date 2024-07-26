@@ -11,10 +11,22 @@ export interface PostCardLikeActionProps {
 
 const PostCardLikeAction: FC<PostCardLikeActionProps> = ({
   className = "px-3 h-8 text-xs",
-  likeCount = 34,
+  likeCount = 0,
   liked = false,
 }) => {
   const [isLiked, setisLiked] = useState(liked);
+  const [count, setLikeCount] = useState(likeCount);
+
+  
+  const handleClickLike = (isLiked: boolean) => {
+
+    let newCount = isLiked? Number(count)+1 : Number(count)-1;
+
+    setisLiked(isLiked);
+    setLikeCount(newCount);
+    
+    console.log('fire like request');
+  }
 
   return (
     <button
@@ -23,7 +35,7 @@ const PostCardLikeAction: FC<PostCardLikeActionProps> = ({
           ? "text-rose-600 bg-rose-50 dark:bg-rose-100"
           : "text-neutral-700 bg-neutral-50 dark:text-neutral-200 dark:bg-neutral-800 hover:bg-rose-50 dark:hover:bg-rose-100 hover:text-rose-600 dark:hover:text-rose-500"
       }`}
-      onClick={() => setisLiked(!isLiked)}
+      onClick={() => handleClickLike(!isLiked)}
       title="Liked"
     >
       <svg
@@ -49,7 +61,8 @@ const PostCardLikeAction: FC<PostCardLikeActionProps> = ({
             isLiked ? "text-rose-600" : "text-neutral-900 dark:text-neutral-200"
           }`}
         >
-          {convertNumbThousand(isLiked ? likeCount + 1 : likeCount)}
+          {/* {convertNumbThousand(isLiked ? likeCount + 1 : likeCount)} */}
+          {count}
         </span>
       )}
     </button>

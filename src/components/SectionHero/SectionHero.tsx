@@ -24,7 +24,6 @@ const SectionHero: FC<SectionHeroProps> = ({
     return subHeading.replace(new RegExp('\r?\n','g'), '<br />');
   }, [subHeading]);
   
-  console.log('formattedSubHeading', formattedSubHeading);
   return (
     <div className={`nc-SectionHero relative ${className}`}>
       <div className="flex flex-col lg:flex-row space-y-14 lg:space-y-0 lg:space-x-10 rtl:space-x-reverse items-center relative text-center lg:text-left">

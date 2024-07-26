@@ -25,14 +25,14 @@ const MainNav1: FC<MainNav1Props> = ({}) => {
           <div className="flex-1 flex items-center justify-end text-neutral-700 dark:text-neutral-100 space-x-1 rtl:space-x-reverse">
             <div className="hidden items-center lg:flex">
               <SwitchDarkMode />
-              <SearchModal />
+              {/* <SearchModal /> */}
               <div className="px-1"></div>
               <Button
                 sizeClass="py-3 px-4 sm:px-6"
                 href="/login"
                 pattern="primary"
               >
-                Sign up
+                Entrar
               </Button>
             </div>
             <div className="flex items-center lg:hidden">

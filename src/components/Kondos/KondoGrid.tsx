@@ -6,13 +6,14 @@ import Pagination from "../Pagination/Pagination"
 import { serializeKondos } from "../../data/kondos/kondo.normalizer"
 import { getData } from "../../data/kondos/kondos.actions"
 import ModalConveniences from "../../app/(archives)/ModalConveniences"
-import { useSearchParams } from "next/navigation"
+import KondoTabsNavigation from "./KondoTabsNavigation"
 
 
 const KondoGrid: FC<{urlParams:any}> = async ({urlParams}) => {
 
   const page = urlParams?.page? urlParams.page : 0;
   const search = urlParams?.search? urlParams.search : false;
+  const type = urlParams?.type? urlParams.type : '';
   
   var endpoint = 'http://localhost:3003/kondo';
 
@@ -32,15 +33,19 @@ const KondoGrid: FC<{urlParams:any}> = async ({urlParams}) => {
         // { name: "Most Discussed" },
         // { name: "Most Viewed" },
       ];
-    
+      
     return (
         <div className="container pt-10 pb-16 lg:pb-28 lg:pt-20 space-y-16 lg:space-y-28">
         <div>
           <div className="flex flex-col sm:justify-between sm:flex-row">
             <div className="flex space-x-2.5 rtl:space-x-reverse">
-              <ModalConveniences categories={DEMO_CATEGORIES} />
-              {/* <ModalTags tags={DEMO_TAGS} /> */}
+              <ModalConveniences categories={DEMO_CATEGORIES} />              
             </div>
+
+            <div className="flex space-x-2.5 rtl:space-x-reverse">
+              <KondoTabsNavigation type={type} />
+            </div>
+
             <div className="block my-4 border-b w-full border-neutral-300 dark:border-neutral-500 sm:hidden"></div>
             <div className="flex justify-end">
               <ArchiveFilterListBox lists={FILTERS} />

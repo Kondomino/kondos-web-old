@@ -4,10 +4,12 @@ import { KondoSingleHeader } from "@/components/Kondos/KondoSingleHeader";
 import NcImage from "@/components/NcImage/NcImage";
 import { normalizeKondo } from "@/data/kondos/kondo.normalizer";
 import { getKondoBySlug, getKondoMedias } from "@/data/kondos/kondos.actions";
-import { getCDN } from "@/utils/getCDN";
 import React, { Suspense } from "react";
-import { prepareRealImages } from "../../../../../data/kondos/kondo.model";
+import SectionSliderPosts from "../../../../../components/Sections/SectionSliderPosts";
+import { DEMO_POSTS } from "../../../../../data/posts";
+import BackgroundSection from "../../../../../components/BackgroundSection/BackgroundSection";
 
+const POSTS = DEMO_POSTS;
 
 // KONDO INTERNAL PAGE CONTENT
 // eslint-disable-next-line @next/next/no-async-client-component
@@ -19,6 +21,8 @@ const PageSingle = async (props: any) => {
 
   let IMAGES_GALLERY = await getKondoMedias(kondo.slug, kondo.id)?? [];
   
+  let unities_available_label = `${kondo.type} disponíveis no ${kondo.title}`;
+
   return (
     <div>
 
@@ -55,6 +59,22 @@ const PageSingle = async (props: any) => {
           <Sidebar kondo={kondo} />
         </div>
       </div>
+
+      <div className="nc-PageHomeDemo2 relative">
+        <div className="container relative">
+          
+          <div className="relative py-16">
+            <BackgroundSection />
+            <SectionSliderPosts
+              postCardName="card7"
+              heading="Unidades"
+              subHeading={unities_available_label}
+              posts={POSTS.filter((_, i) => i < 8)}
+            />
+          </div>
+        </div>
+      </div>
+
     </div>
   );
 };

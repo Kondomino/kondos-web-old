@@ -9,19 +9,19 @@ import Heading2 from "@/components/Heading/Heading2";
 import Image from "next/image";
 
 const loginSocials = [
-  {
-    name: "Continue with Facebook",
-    href: "#",
-    icon: facebookSvg,
-  },
-  {
-    name: "Continue with Twitter",
-    href: "#",
-    icon: twitterSvg,
-  },
+  // {
+  //   name: "Continue with Facebook",
+  //   href: "#",
+  //   icon: facebookSvg,
+  // },
+  // {
+  //   name: "Continue with Twitter",
+  //   href: "#",
+  //   icon: twitterSvg,
+  // },
   {
     name: "Continue with Google",
-    href: "#",
+    href: "http://localhost:3003/auth",
     icon: googleSvg,
   },
 ];
@@ -32,7 +32,7 @@ const PageLogin = ({}) => {
       <header className="text-center max-w-2xl mx-auto - mb-14 sm:mb-16 lg:mb-20 ">
         <Heading2>Login</Heading2>
         <span className="block text-sm mt-2 text-neutral-700 sm:text-base dark:text-neutral-200">
-          Welcome to our blog magazine Community
+          Seja bem-vindo
         </span>
       </header>
 

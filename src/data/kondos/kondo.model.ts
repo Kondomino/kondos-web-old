@@ -57,7 +57,7 @@ export class KondoModel extends Model
     featuredImage?: string | StaticImageData | undefined;
     description?: string;
     infraDescription?: string;
-    like?: {
+    like: {
         count: number;
         isLiked: boolean;
     };

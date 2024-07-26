@@ -1,24 +1,31 @@
-import React, { Suspense } from "react";
+"use server"
+
+import { cookies } from 'next/headers'
+
+import React, { Suspense, useContext } from "react";
 import NcImage from "@/components/NcImage/NcImage";
-import { getData } from "@/data/kondos/kondos.actions";
-import { serializeKondos } from "@/data/kondos/kondo.normalizer";
 import KondoGrid from "../../components/Kondos/KondoGrid";
 import KondoSearchForm from "../../components/KondoSearch/KondoSearchForm";
-import { redirect, useRouter } from "next/navigation";
+import { getCurrentUser } from '../../data/users/users.actions';
+import { GlobalContext } from '../../components/GlobalState/GlobalState';
 
 // Tag and category have same data type - we will use one demo data
 //const posts: PostDataType[] = DEMO_POSTS.filter((_, i) => i < 16);
+export async function getSessionData(req?: any) {
+  const encryptedSessionData = cookies().get('session')?.value
+  return encryptedSessionData ? JSON.parse(decrypt(encryptedSessionData)) : null
+}
 
 // HOME PAGE
 // eslint-disable-next-line @next/next/no-async-client-component
-export default function Page({
+export default async function Page({
   params,
   searchParams,
 }: {
   params: { slug: string }
   searchParams: { [key: string]: string | string[] | undefined }
 }) {
-  
+
   const urlParams = Object.assign(params, searchParams);
 
   let type = urlParams?.type? urlParams.type : 'condomínios';
@@ -41,8 +48,8 @@ export default function Page({
     }
   }
 
-  let site_name = "Kondomino";
-  
+  let site_name = "Kondomino AI";
+
   return (
     <div className="nc-PageHome relative">
 
@@ -64,13 +71,14 @@ export default function Page({
             <header className="w-full max-w-3xl mx-auto text-center flex flex-col items-center">
               <h2 className="text-2xl sm:text-4xl font-semibold">{site_name}</h2>
               <span className="block text-xs sm:text-sm mt-4 text-neutral-500 dark:text-neutral-300">
-                Compare entre {" "}
+                Utilize nossa  {" "}
                 <strong className="font-medium text-neutral-800 dark:text-neutral-100">
-                  234
-                </strong>{" "}
-                {" "}
+                Inteligência Artificial{" "}
+                </strong>
+                  para encontrar os  {" "}
                 <strong className="font-medium text-neutral-800 dark:text-neutral-100">
-                {typeFormated} {" "}
+                melhores
+                condomínios {" "}
                 </strong>
               </span>
               
@@ -88,3 +96,5 @@ export default function Page({
     </div>
   );
 };
+
+ 

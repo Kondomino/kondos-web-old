@@ -18,7 +18,7 @@ const PageAbout = ({}) => {
       <div className="container py-16 lg:py-28 space-y-16 lg:space-y-28">
         <SectionKondoHero
           rightImg={rightImg}
-          heading="👋 Sobre Nós"
+          heading="👋 Quem Somos"
           btnText=""
           subHeading="Nosso objetivo é facilitar a sua vida, criando ferramentas para você encontrar seu imóvel com mais facilidade, transparência e agilidade."
           text="Não somos uma imobiliária. Somos a mais nova Startup de BH, formada por colegas líderes em diferentes áreas como Tecnologia, Engenharia Ambiental e Direito."

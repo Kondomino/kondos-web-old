@@ -26,7 +26,7 @@ export function normalizeKondos(kondos: any) {
   
   export function normalizeKondo(kondoRaw: any) {
 
-    const { dataValues, isNewRecord, details, address, conveniences } = kondoRaw;
+    const { dataValues, isNewRecord, details, address, conveniences, likes } = kondoRaw;
 
     const normalized = new KondoModel(dataValues);
       normalized.name = normalized.title = dataValues.name;
@@ -43,6 +43,12 @@ export function normalizeKondos(kondos: any) {
       normalized.address.minutes_from_bh = normalized.address.minutes_from_bh? normalized.address.minutes_from_bh : '?' ;
 
       normalized.conveniences = normalizeKondoConveniencesBlock(conveniences);
+
+      normalized.like = {
+        count: likes,
+        isLiked: false
+      }
+
       return {...normalized};
   }
   

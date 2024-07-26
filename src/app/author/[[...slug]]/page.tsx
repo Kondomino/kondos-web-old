@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { DEMO_POSTS } from "@/data/posts";
 import { PostDataType } from "@/data/types";
 import Pagination from "@/components/Pagination/Pagination";
@@ -19,13 +19,14 @@ import ButtonSecondary from "@/components/Button/ButtonSecondary";
 import SectionSliderNewAuthors from "@/components/SectionSliderNewAthors/SectionSliderNewAuthors";
 import NcImage from "@/components/NcImage/NcImage";
 import { GlobeAltIcon, ShareIcon } from "@heroicons/react/24/outline";
-import { avatarImgs } from "@/contains/fakeData";
 import VerifyIcon from "@/components/VerifyIcon";
 import FollowButton from "@/components/FollowButton";
 import NcDropDown from "@/components/NcDropDown/NcDropDown";
 import { SOCIALS_DATA } from "@/components/SocialsShare/SocialsShare";
 import AccountActionDropdown from "@/components/AccountActionDropdown/AccountActionDropdown";
 import Image from "next/image";
+import { GlobalContext } from "../../../components/GlobalState/GlobalState";
+import { avatarImgs } from "../../../contains/fakeData";
 
 const posts: PostDataType[] = DEMO_POSTS.filter((_, i) => i < 12);
 const FILTERS = [
@@ -46,6 +47,17 @@ const PageAuthor = ({}) => {
     }
     setTabActive(item);
   };
+
+  // @ts-ignore
+  const { user } = useContext(GlobalContext);
+  
+  let picture = avatarImgs[0];
+  let name = '';
+
+  if (user) {
+    picture = user.picture;
+    name = user.firstName + ' ' + user.lastName;
+  }
 
   return (
     <div className={`nc-PageAuthor `}>
@@ -68,7 +80,7 @@ const PageAuthor = ({}) => {
               <div className="wil-avatar relative flex-shrink-0 inline-flex items-center justify-center overflow-hidden text-neutral-100 uppercase font-semibold rounded-full w-20 h-20 text-xl lg:text-2xl lg:w-36 lg:h-36 ring-4 ring-white dark:ring-0 shadow-2xl z-0">
                 <Image
                   alt="Avatar"
-                  src={avatarImgs[3]}
+                  src={picture}
                   fill
                   className="object-cover"
                   priority
@@ -80,7 +92,7 @@ const PageAuthor = ({}) => {
             <div className="pt-5 md:pt-1 lg:ml-6 xl:ml-12 flex-grow">
               <div className="max-w-screen-sm space-y-3.5 ">
                 <h2 className="inline-flex items-center text-2xl sm:text-3xl lg:text-4xl font-semibold">
-                  <span>Dony Herrera</span>
+                  <span>{name}</span>
                   <VerifyIcon
                     className="ml-2"
                     iconClass="w-6 h-6 sm:w-7 sm:h-7 xl:w-8 xl:h-8"

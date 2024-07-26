@@ -2,12 +2,21 @@
 
 import { Popover, Transition } from "@/app/headlessui";
 import { avatarImgs } from "@/contains/fakeData";
-import { Fragment } from "react";
+import { Fragment, useContext } from "react";
 import Avatar from "@/components/Avatar/Avatar";
 import SwitchDarkMode2 from "@/components/SwitchDarkMode/SwitchDarkMode2";
 import Link from "next/link";
+import { useSession } from "next-auth/react";
+import { userAgent } from "next/server";
+import { GlobalContext } from "../GlobalState/GlobalState";
 
 export default function AvatarDropdown() {
+
+  // @ts-ignore
+  const { user } = useContext(GlobalContext);
+
+  const picture = user.picture ? user.picture : avatarImgs[0];
+
   return (
     <div className="AvatarDropdown ">
       <Popover className="relative">
@@ -51,11 +60,11 @@ export default function AvatarDropdown() {
                 <div className="overflow-hidden rounded-3xl shadow-lg ring-1 ring-black ring-opacity-5">
                   <div className="relative grid grid-cols-1 gap-6 bg-white dark:bg-neutral-800 py-7 px-6">
                     <div className="flex items-center">
-                      <Avatar imgUrl={avatarImgs[7]} sizeClass="w-12 h-12" />
+                      <Avatar imgUrl={picture} sizeClass="w-12 h-12" />
 
                       <div className="flex-grow ms-3">
-                        <h4 className="font-semibold">Eden Smith</h4>
-                        <p className="text-xs mt-0.5">Los Angeles, CA</p>
+                        <h4 className="font-semibold">{user.firstName + ' ' + user.lastName}</h4>
+                        <p className="text-xs mt-0.5"></p>
                       </div>
                     </div>
 

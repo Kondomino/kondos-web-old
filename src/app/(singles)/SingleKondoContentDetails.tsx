@@ -37,10 +37,10 @@ export const SingleKondoContentDetails: FC<KondoProps> = ({ kondo }) => {
       <p>
         Valor do condomínio: {kondo.details?.condo_rent}
       </p>
-      <h2>Lotes</h2>
+      {/* <h2>Lotes</h2>
       <p>
         Preço médio dos lotes: {kondo.details?.lot_avg_price}
-      </p>
+      </p> */}
     </>
   );
 };
