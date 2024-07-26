@@ -2,7 +2,7 @@
   "node": {
     "bbb0cfa91f84a36d432628e2ce373597c19ef837": {
       "workers": {
-        "app/(home)/page": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22C%3A%5C%5CProjetos%5C%5Ckondos-web%5C%5Csrc%5C%5Capp%5C%5C(home)%5C%5Cpage.tsx%22%2C%5B%22getSessionData%22%2C%22default%22%5D%5D%2C%5B%22C%3A%5C%5CProjetos%5C%5Ckondos-web%5C%5Csrc%5C%5Cdata%5C%5Ckondos%5C%5Ckondos.actions.ts%22%2C%5B%22likeKondo%22%2C%22getKondoBySlug%22%2C%22getData%22%2C%22getKondoMedias%22%5D%5D%5D&__client_imported__=!"
+        "app/(home)/page": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22C%3A%5C%5CProjetos%5C%5Ckondos-web%5C%5Csrc%5C%5Capp%5C%5C(home)%5C%5Cpage.tsx%22%2C%5B%22getSessionData%22%2C%22default%22%5D%5D%2C%5B%22C%3A%5C%5CProjetos%5C%5Ckondos-web%5C%5Csrc%5C%5Cdata%5C%5Ckondos%5C%5Ckondos.actions.ts%22%2C%5B%22getData%22%2C%22getKondoBySlug%22%2C%22getKondoMedias%22%2C%22likeKondo%22%5D%5D%5D&__client_imported__=!"
       },
       "layer": {
         "app/(home)/page": "rsc"
@@ -10,23 +10,7 @@
     },
     "3089ca17752f1ba93fb2c894ea79c45b650b9d6a": {
       "workers": {
-        "app/(home)/page": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22C%3A%5C%5CProjetos%5C%5Ckondos-web%5C%5Csrc%5C%5Capp%5C%5C(home)%5C%5Cpage.tsx%22%2C%5B%22getSessionData%22%2C%22default%22%5D%5D%2C%5B%22C%3A%5C%5CProjetos%5C%5Ckondos-web%5C%5Csrc%5C%5Cdata%5C%5Ckondos%5C%5Ckondos.actions.ts%22%2C%5B%22likeKondo%22%2C%22getKondoBySlug%22%2C%22getData%22%2C%22getKondoMedias%22%5D%5D%5D&__client_imported__=!"
-      },
-      "layer": {
-        "app/(home)/page": "rsc"
-      }
-    },
-    "3e78fc249c3e85e631b00c29b12024bbe1ffe669": {
-      "workers": {
-        "app/(home)/page": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22C%3A%5C%5CProjetos%5C%5Ckondos-web%5C%5Csrc%5C%5Capp%5C%5C(home)%5C%5Cpage.tsx%22%2C%5B%22getSessionData%22%2C%22default%22%5D%5D%2C%5B%22C%3A%5C%5CProjetos%5C%5Ckondos-web%5C%5Csrc%5C%5Cdata%5C%5Ckondos%5C%5Ckondos.actions.ts%22%2C%5B%22likeKondo%22%2C%22getKondoBySlug%22%2C%22getData%22%2C%22getKondoMedias%22%5D%5D%5D&__client_imported__=!"
-      },
-      "layer": {
-        "app/(home)/page": "rsc"
-      }
-    },
-    "2a27407c93175598f1b63affb0d1a8ecc807529c": {
-      "workers": {
-        "app/(home)/page": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22C%3A%5C%5CProjetos%5C%5Ckondos-web%5C%5Csrc%5C%5Capp%5C%5C(home)%5C%5Cpage.tsx%22%2C%5B%22getSessionData%22%2C%22default%22%5D%5D%2C%5B%22C%3A%5C%5CProjetos%5C%5Ckondos-web%5C%5Csrc%5C%5Cdata%5C%5Ckondos%5C%5Ckondos.actions.ts%22%2C%5B%22likeKondo%22%2C%22getKondoBySlug%22%2C%22getData%22%2C%22getKondoMedias%22%5D%5D%5D&__client_imported__=!"
+        "app/(home)/page": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22C%3A%5C%5CProjetos%5C%5Ckondos-web%5C%5Csrc%5C%5Capp%5C%5C(home)%5C%5Cpage.tsx%22%2C%5B%22getSessionData%22%2C%22default%22%5D%5D%2C%5B%22C%3A%5C%5CProjetos%5C%5Ckondos-web%5C%5Csrc%5C%5Cdata%5C%5Ckondos%5C%5Ckondos.actions.ts%22%2C%5B%22getData%22%2C%22getKondoBySlug%22%2C%22getKondoMedias%22%2C%22likeKondo%22%5D%5D%5D&__client_imported__=!"
       },
       "layer": {
         "app/(home)/page": "rsc"
@@ -34,7 +18,15 @@
     },
     "04ca294aede6c5b225875b8f880b05f07a3e93a3": {
       "workers": {
-        "app/(home)/page": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22C%3A%5C%5CProjetos%5C%5Ckondos-web%5C%5Csrc%5C%5Capp%5C%5C(home)%5C%5Cpage.tsx%22%2C%5B%22getSessionData%22%2C%22default%22%5D%5D%2C%5B%22C%3A%5C%5CProjetos%5C%5Ckondos-web%5C%5Csrc%5C%5Cdata%5C%5Ckondos%5C%5Ckondos.actions.ts%22%2C%5B%22likeKondo%22%2C%22getKondoBySlug%22%2C%22getData%22%2C%22getKondoMedias%22%5D%5D%5D&__client_imported__=!"
+        "app/(home)/page": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22C%3A%5C%5CProjetos%5C%5Ckondos-web%5C%5Csrc%5C%5Capp%5C%5C(home)%5C%5Cpage.tsx%22%2C%5B%22getSessionData%22%2C%22default%22%5D%5D%2C%5B%22C%3A%5C%5CProjetos%5C%5Ckondos-web%5C%5Csrc%5C%5Cdata%5C%5Ckondos%5C%5Ckondos.actions.ts%22%2C%5B%22getData%22%2C%22getKondoBySlug%22%2C%22getKondoMedias%22%2C%22likeKondo%22%5D%5D%5D&__client_imported__=!"
+      },
+      "layer": {
+        "app/(home)/page": "rsc"
+      }
+    },
+    "2a27407c93175598f1b63affb0d1a8ecc807529c": {
+      "workers": {
+        "app/(home)/page": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22C%3A%5C%5CProjetos%5C%5Ckondos-web%5C%5Csrc%5C%5Capp%5C%5C(home)%5C%5Cpage.tsx%22%2C%5B%22getSessionData%22%2C%22default%22%5D%5D%2C%5B%22C%3A%5C%5CProjetos%5C%5Ckondos-web%5C%5Csrc%5C%5Cdata%5C%5Ckondos%5C%5Ckondos.actions.ts%22%2C%5B%22getData%22%2C%22getKondoBySlug%22%2C%22getKondoMedias%22%2C%22likeKondo%22%5D%5D%5D&__client_imported__=!"
       },
       "layer": {
         "app/(home)/page": "rsc"
@@ -42,7 +34,15 @@
     },
     "2d7a403bb06c9099642c23ca49ea147933c8cf39": {
       "workers": {
-        "app/(home)/page": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22C%3A%5C%5CProjetos%5C%5Ckondos-web%5C%5Csrc%5C%5Capp%5C%5C(home)%5C%5Cpage.tsx%22%2C%5B%22getSessionData%22%2C%22default%22%5D%5D%2C%5B%22C%3A%5C%5CProjetos%5C%5Ckondos-web%5C%5Csrc%5C%5Cdata%5C%5Ckondos%5C%5Ckondos.actions.ts%22%2C%5B%22likeKondo%22%2C%22getKondoBySlug%22%2C%22getData%22%2C%22getKondoMedias%22%5D%5D%5D&__client_imported__=!"
+        "app/(home)/page": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22C%3A%5C%5CProjetos%5C%5Ckondos-web%5C%5Csrc%5C%5Capp%5C%5C(home)%5C%5Cpage.tsx%22%2C%5B%22getSessionData%22%2C%22default%22%5D%5D%2C%5B%22C%3A%5C%5CProjetos%5C%5Ckondos-web%5C%5Csrc%5C%5Cdata%5C%5Ckondos%5C%5Ckondos.actions.ts%22%2C%5B%22getData%22%2C%22getKondoBySlug%22%2C%22getKondoMedias%22%2C%22likeKondo%22%5D%5D%5D&__client_imported__=!"
+      },
+      "layer": {
+        "app/(home)/page": "rsc"
+      }
+    },
+    "3e78fc249c3e85e631b00c29b12024bbe1ffe669": {
+      "workers": {
+        "app/(home)/page": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22C%3A%5C%5CProjetos%5C%5Ckondos-web%5C%5Csrc%5C%5Capp%5C%5C(home)%5C%5Cpage.tsx%22%2C%5B%22getSessionData%22%2C%22default%22%5D%5D%2C%5B%22C%3A%5C%5CProjetos%5C%5Ckondos-web%5C%5Csrc%5C%5Cdata%5C%5Ckondos%5C%5Ckondos.actions.ts%22%2C%5B%22getData%22%2C%22getKondoBySlug%22%2C%22getKondoMedias%22%2C%22likeKondo%22%5D%5D%5D&__client_imported__=!"
       },
       "layer": {
         "app/(home)/page": "rsc"
@@ -51,16 +51,16 @@
     "658f133471aec3e948c2ae4bbeca9d1e11205d13": {
       "workers": {
         "app/(home)/page": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22C%3A%5C%5CProjetos%5C%5Ckondos-web%5C%5Csrc%5C%5Cdata%5C%5Cusers%5C%5Cusers.actions.ts%22%2C%5B%22getCurrentUser%22%5D%5D%5D&__client_imported__=true!",
-        "app/about/page": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22C%3A%5C%5CProjetos%5C%5Ckondos-web%5C%5Csrc%5C%5Cdata%5C%5Cusers%5C%5Cusers.actions.ts%22%2C%5B%22getCurrentUser%22%5D%5D%5D&__client_imported__=true!",
-        "app/author/[[...slug]]/page": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22C%3A%5C%5CProjetos%5C%5Ckondos-web%5C%5Csrc%5C%5Cdata%5C%5Cusers%5C%5Cusers.actions.ts%22%2C%5B%22getCurrentUser%22%5D%5D%5D&__client_imported__=true!"
+        "app/(others)/terms/page": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22C%3A%5C%5CProjetos%5C%5Ckondos-web%5C%5Csrc%5C%5Cdata%5C%5Cusers%5C%5Cusers.actions.ts%22%2C%5B%22getCurrentUser%22%5D%5D%5D&__client_imported__=true!",
+        "app/(others)/policy/page": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22C%3A%5C%5CProjetos%5C%5Ckondos-web%5C%5Csrc%5C%5Cdata%5C%5Cusers%5C%5Cusers.actions.ts%22%2C%5B%22getCurrentUser%22%5D%5D%5D&__client_imported__=true!"
       },
       "layer": {
         "app/(home)/page": "action-browser",
-        "app/about/page": "action-browser",
-        "app/author/[[...slug]]/page": "action-browser"
+        "app/(others)/terms/page": "action-browser",
+        "app/(others)/policy/page": "action-browser"
       }
     }
   },
   "edge": {},
-  "encryptionKey": "rDdfYQCppyoMNATgNwJ8l3e/ZPIXaJYym/HzzJdVyVQ="
+  "encryptionKey": "9M1jRY8dytXye0uEU0jfNberrvRwKVvpWfIwFL3GZzE="
 }

@@ -15,7 +15,13 @@ export default function AvatarDropdown() {
   // @ts-ignore
   const { user } = useContext(GlobalContext);
 
-  const picture = user.picture ? user.picture : avatarImgs[0];
+  let picture = avatarImgs[0];
+  let name = '';
+
+  if (user) {
+    picture = user.picture;
+    name = user.firstName + ' ' + user.lastName;
+  }
 
   return (
     <div className="AvatarDropdown ">
@@ -63,7 +69,7 @@ export default function AvatarDropdown() {
                       <Avatar imgUrl={picture} sizeClass="w-12 h-12" />
 
                       <div className="flex-grow ms-3">
-                        <h4 className="font-semibold">{user.firstName + ' ' + user.lastName}</h4>
+                        <h4 className="font-semibold">{name}</h4>
                         <p className="text-xs mt-0.5"></p>
                       </div>
                     </div>

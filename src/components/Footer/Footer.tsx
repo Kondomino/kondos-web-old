@@ -2,6 +2,7 @@ import React from "react";
 import Logo from "@/components/Logo/Logo";
 import SocialsList1 from "@/components/SocialsList1/SocialsList1";
 import { CustomLink } from "@/data/types";
+import { Route } from "next";
 
 export interface WidgetFooterMenu {
   id: string;
@@ -12,46 +13,21 @@ export interface WidgetFooterMenu {
 const widgetMenus: WidgetFooterMenu[] = [
   {
     id: "5",
-    title: "Getting started",
+    title: "Condomínios",
     menus: [
-      { href: "/", label: "Installation" },
-      { href: "/", label: "Release Notes" },
-      { href: "/", label: "Upgrade Guide" },
-      { href: "/", label: "Browser Support" },
-      { href: "/", label: "Editor Support" },
+      { href: "/?type=casas", label: "de Casas" },
+      { href: "/?type=predios", label: "de Prédios" },
+      { href: "/?type=chacaras", label: "de Chácaras" },
+      { href: "/", label: "Todos os Tipos" },
     ],
   },
   {
     id: "1",
-    title: "Explore",
+    title: "Sobre",
     menus: [
-      { href: "/", label: "Design features" },
-      { href: "/", label: "Prototyping" },
-      { href: "/", label: "Design systems" },
-      { href: "/", label: "Pricing" },
-      { href: "/", label: "Customers" },
-    ],
-  },
-  {
-    id: "2",
-    title: "Resources",
-    menus: [
-      { href: "/", label: "Best practices" },
-      { href: "/", label: "Support" },
-      { href: "/", label: "Developers" },
-      { href: "/", label: "Learn design" },
-      { href: "/", label: "What's new" },
-    ],
-  },
-  {
-    id: "4",
-    title: "Community",
-    menus: [
-      { href: "/", label: "Discussion Forums" },
-      { href: "/", label: "Code of Conduct" },
-      { href: "/", label: "Community Resources" },
-      { href: "/", label: "Contributing" },
-      { href: "/", label: "Concurrent Mode" },
+      { href: "/policy" as Route, label: "Políticas de Privacidade" },
+      { href: "/terms" as Route, label: "Termos de Uso" },
+      { href: "/about" as Route, label: "Sobre a Empresa" },
     ],
   },
 ];
