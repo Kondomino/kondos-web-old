@@ -1,6 +1,5 @@
 "use server"
 
-import { cookies } from 'next/headers'
 import React, { Suspense } from "react";
 import NcImage from "@/components/NcImage/NcImage";
 import KondoGrid from "../../components/Kondos/KondoGrid";
