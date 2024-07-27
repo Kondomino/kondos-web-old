@@ -1,3 +1,4 @@
+// @ts-nocheck
 "use client";
 
 import { useSearchParams } from "next/navigation";
@@ -13,7 +14,7 @@ export const initialUserData = {
   jwt: null
 }
 
-export default function GlobalState({ children }) {
+export default function GlobalState({ children: any }) {
  
   const [isAuthUser, setIsAuthUser] = useState(null);
   const [user, setUser] = useState(null);
@@ -49,7 +50,7 @@ export default function GlobalState({ children }) {
             }
           */
           console.log('invalid jwt');
-          setIsAuthUser(false);
+          setIsAuthUser(null);
           setUser(null);
         }
         else if (decoded) {

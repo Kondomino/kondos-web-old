@@ -1,20 +1,11 @@
 "use server"
 
 import { cookies } from 'next/headers'
-
-import React, { Suspense, useContext } from "react";
+import React, { Suspense } from "react";
 import NcImage from "@/components/NcImage/NcImage";
 import KondoGrid from "../../components/Kondos/KondoGrid";
 import KondoSearchForm from "../../components/KondoSearch/KondoSearchForm";
-import { getCurrentUser } from '../../data/users/users.actions';
-import { GlobalContext } from '../../components/GlobalState/GlobalState';
 
-// Tag and category have same data type - we will use one demo data
-//const posts: PostDataType[] = DEMO_POSTS.filter((_, i) => i < 16);
-export async function getSessionData(req?: any) {
-  const encryptedSessionData = cookies().get('session')?.value
-  return encryptedSessionData ? JSON.parse(decrypt(encryptedSessionData)) : null
-}
 
 // HOME PAGE
 // eslint-disable-next-line @next/next/no-async-client-component

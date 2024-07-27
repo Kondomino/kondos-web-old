@@ -9,7 +9,7 @@ export interface PostCardLikeAndCommentProps {
   itemClass?: string;
   hiddenCommentOnMobile?: boolean;
   useOnSinglePage?: boolean;
-  kondo: PostDataType
+  kondo?: PostDataType
 }
 
 const PostCardLikeAndComment: FC<PostCardLikeAndCommentProps> = ({
@@ -17,7 +17,7 @@ const PostCardLikeAndComment: FC<PostCardLikeAndCommentProps> = ({
   itemClass = "px-3 h-8 text-xs",
   hiddenCommentOnMobile = true,
   useOnSinglePage = false,
-  kondo
+  kondo = { like: { count: 0 }}
 }) => {
 
   const randomBoolean = Math.random() < 0.6;
