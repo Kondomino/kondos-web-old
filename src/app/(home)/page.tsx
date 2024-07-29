@@ -5,9 +5,7 @@ import NcImage from "@/components/NcImage/NcImage";
 import KondoGrid from "../../components/Kondos/KondoGrid";
 import KondoSearchForm from "../../components/KondoSearch/KondoSearchForm";
 
-
 // HOME PAGE
-// eslint-disable-next-line @next/next/no-async-client-component
 export default async function Page({
   params,
   searchParams,

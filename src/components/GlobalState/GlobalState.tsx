@@ -14,7 +14,11 @@ export const initialUserData = {
   jwt: null
 }
 
-export default function GlobalState({ children: any }) {
+export default function GlobalState({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
  
   const [isAuthUser, setIsAuthUser] = useState(null);
   const [user, setUser] = useState(null);

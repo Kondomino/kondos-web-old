@@ -6,6 +6,8 @@ import NcLink from "@/components/NcLink/NcLink";
 import Heading2 from "@/components/Heading/Heading2";
 import Image from "next/image";
 
+var GoogleAuthUrl = process.env.NODE_ENV === 'production'? 'https://kondomino.com.br/auth' : 'http://localhost:3003/auth';
+
 const loginSocials = [
   // {
   //   name: "Continue with Facebook",
@@ -19,7 +21,7 @@ const loginSocials = [
   // },
   {
     name: "Continue with Google",
-    href: "http://localhost:3003/auth",
+    href: GoogleAuthUrl,
     icon: googleSvg,
   },
 ];

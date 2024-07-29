@@ -1,7 +1,7 @@
 // runtime can't be in strict mode because a global variable is assign and maybe created.
 (self["webpackChunk_N_E"] = self["webpackChunk_N_E"] || []).push([[727],{
 
-/***/ 627:
+/***/ 220:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -295,7 +295,7 @@ function detectDomainLocale(domainItems, hostname, detectedLocale) {
     for (const item of domainItems){
         var _item_domain, _item_locales;
         // remove port if present
-        const domainHostname = (_item_domain = item.domain) == null ? void 0 : _item_domain.split(":", 1)[0].toLowerCase();
+        const domainHostname = (_item_domain = item.domain) == null ? void 0 : _item_domain.split(":")[0].toLowerCase();
         if (hostname === domainHostname || detectedLocale === item.defaultLocale.toLowerCase() || ((_item_locales = item.locales) == null ? void 0 : _item_locales.some((locale)=>locale.toLowerCase() === detectedLocale))) {
             return item;
         }
@@ -429,7 +429,7 @@ function formatNextPathnameInfo(info) {
     // hostname.
     let hostname;
     if ((headers == null ? void 0 : headers.host) && !Array.isArray(headers.host)) {
-        hostname = headers.host.toString().split(":", 1)[0];
+        hostname = headers.host.toString().split(":")[0];
     } else if (parsed.hostname) {
         hostname = parsed.hostname;
     } else return;
@@ -914,185 +914,27 @@ class NextResponse extends Response {
 } //# sourceMappingURL=relativize-url.js.map
 
 ;// CONCATENATED MODULE: ./node_modules/next/dist/esm/client/components/app-router-headers.js
-const RSC_HEADER = "RSC";
+const RSC = "RSC";
 const ACTION = "Next-Action";
 const NEXT_ROUTER_STATE_TREE = "Next-Router-State-Tree";
-const NEXT_ROUTER_PREFETCH_HEADER = "Next-Router-Prefetch";
+const NEXT_ROUTER_PREFETCH = "Next-Router-Prefetch";
 const NEXT_URL = "Next-Url";
 const RSC_CONTENT_TYPE_HEADER = "text/x-component";
-const RSC_VARY_HEADER = RSC_HEADER + ", " + NEXT_ROUTER_STATE_TREE + ", " + NEXT_ROUTER_PREFETCH_HEADER + ", " + NEXT_URL;
+const RSC_VARY_HEADER = RSC + ", " + NEXT_ROUTER_STATE_TREE + ", " + NEXT_ROUTER_PREFETCH + ", " + NEXT_URL;
 const FLIGHT_PARAMETERS = [
     [
-        RSC_HEADER
+        RSC
     ],
     [
         NEXT_ROUTER_STATE_TREE
     ],
     [
-        NEXT_ROUTER_PREFETCH_HEADER
+        NEXT_ROUTER_PREFETCH
     ]
 ];
 const NEXT_RSC_UNION_QUERY = "_rsc"; //# sourceMappingURL=app-router-headers.js.map
 
-// EXTERNAL MODULE: ./node_modules/next/dist/esm/shared/lib/modern-browserslist-target.js
-var modern_browserslist_target = __webpack_require__(459);
-;// CONCATENATED MODULE: ./node_modules/next/dist/esm/shared/lib/constants.js
-
-
-const COMPILER_NAMES = {
-    client: "client",
-    server: "server",
-    edgeServer: "edge-server"
-};
-/**
- * Headers that are set by the Next.js server and should be stripped from the
- * request headers going to the user's application.
- */ const constants_INTERNAL_HEADERS = (/* unused pure expression or super */ null && ([
-    "x-invoke-error",
-    "x-invoke-output",
-    "x-invoke-path",
-    "x-invoke-query",
-    "x-invoke-status",
-    "x-middleware-invoke"
-]));
-const COMPILER_INDEXES = {
-    [COMPILER_NAMES.client]: 0,
-    [COMPILER_NAMES.server]: 1,
-    [COMPILER_NAMES.edgeServer]: 2
-};
-const PHASE_EXPORT = "phase-export";
-const PHASE_PRODUCTION_BUILD = "phase-production-build";
-const PHASE_PRODUCTION_SERVER = "phase-production-server";
-const PHASE_DEVELOPMENT_SERVER = "phase-development-server";
-const PHASE_TEST = "phase-test";
-const PHASE_INFO = "phase-info";
-const PAGES_MANIFEST = "pages-manifest.json";
-const APP_PATHS_MANIFEST = "app-paths-manifest.json";
-const APP_PATH_ROUTES_MANIFEST = "app-path-routes-manifest.json";
-const BUILD_MANIFEST = "build-manifest.json";
-const APP_BUILD_MANIFEST = "app-build-manifest.json";
-const FUNCTIONS_CONFIG_MANIFEST = "functions-config-manifest.json";
-const SUBRESOURCE_INTEGRITY_MANIFEST = "subresource-integrity-manifest";
-const NEXT_FONT_MANIFEST = "next-font-manifest";
-const EXPORT_MARKER = "export-marker.json";
-const EXPORT_DETAIL = "export-detail.json";
-const PRERENDER_MANIFEST = "prerender-manifest.json";
-const ROUTES_MANIFEST = "routes-manifest.json";
-const IMAGES_MANIFEST = "images-manifest.json";
-const SERVER_FILES_MANIFEST = "required-server-files.json";
-const DEV_CLIENT_PAGES_MANIFEST = "_devPagesManifest.json";
-const MIDDLEWARE_MANIFEST = "middleware-manifest.json";
-const DEV_MIDDLEWARE_MANIFEST = "_devMiddlewareManifest.json";
-const REACT_LOADABLE_MANIFEST = "react-loadable-manifest.json";
-const FONT_MANIFEST = "font-manifest.json";
-const SERVER_DIRECTORY = "server";
-const CONFIG_FILES = (/* unused pure expression or super */ null && ([
-    "next.config.js",
-    "next.config.mjs"
-]));
-const BUILD_ID_FILE = "BUILD_ID";
-const BLOCKED_PAGES = (/* unused pure expression or super */ null && ([
-    "/_document",
-    "/_app",
-    "/_error"
-]));
-const CLIENT_PUBLIC_FILES_PATH = "public";
-const CLIENT_STATIC_FILES_PATH = "static";
-const STRING_LITERAL_DROP_BUNDLE = "__NEXT_DROP_CLIENT_FILE__";
-const NEXT_BUILTIN_DOCUMENT = "__NEXT_BUILTIN_DOCUMENT__";
-const BARREL_OPTIMIZATION_PREFIX = "__barrel_optimize__";
-// server/[entry]/page_client-reference-manifest.js
-const CLIENT_REFERENCE_MANIFEST = "client-reference-manifest";
-// server/server-reference-manifest
-const SERVER_REFERENCE_MANIFEST = "server-reference-manifest";
-// server/middleware-build-manifest.js
-const MIDDLEWARE_BUILD_MANIFEST = "middleware-build-manifest";
-// server/middleware-react-loadable-manifest.js
-const MIDDLEWARE_REACT_LOADABLE_MANIFEST = "middleware-react-loadable-manifest";
-// static/runtime/main.js
-const CLIENT_STATIC_FILES_RUNTIME_MAIN = "main";
-const CLIENT_STATIC_FILES_RUNTIME_MAIN_APP = "" + CLIENT_STATIC_FILES_RUNTIME_MAIN + "-app";
-// next internal client components chunk for layouts
-const APP_CLIENT_INTERNALS = "app-pages-internals";
-// static/runtime/react-refresh.js
-const CLIENT_STATIC_FILES_RUNTIME_REACT_REFRESH = "react-refresh";
-// static/runtime/amp.js
-const CLIENT_STATIC_FILES_RUNTIME_AMP = "amp";
-// static/runtime/webpack.js
-const CLIENT_STATIC_FILES_RUNTIME_WEBPACK = "webpack";
-// static/runtime/polyfills.js
-const CLIENT_STATIC_FILES_RUNTIME_POLYFILLS = "polyfills";
-const CLIENT_STATIC_FILES_RUNTIME_POLYFILLS_SYMBOL = Symbol(CLIENT_STATIC_FILES_RUNTIME_POLYFILLS);
-const EDGE_RUNTIME_WEBPACK = "edge-runtime-webpack";
-const TEMPORARY_REDIRECT_STATUS = 307;
-const PERMANENT_REDIRECT_STATUS = 308;
-const STATIC_PROPS_ID = "__N_SSG";
-const SERVER_PROPS_ID = "__N_SSP";
-const PAGE_SEGMENT_KEY = "__PAGE__";
-const GOOGLE_FONT_PROVIDER = "https://fonts.googleapis.com/";
-const OPTIMIZED_FONT_PROVIDERS = [
-    {
-        url: GOOGLE_FONT_PROVIDER,
-        preconnect: "https://fonts.gstatic.com"
-    },
-    {
-        url: "https://use.typekit.net",
-        preconnect: "https://use.typekit.net"
-    }
-];
-const DEFAULT_SERIF_FONT = {
-    name: "Times New Roman",
-    xAvgCharWidth: 821,
-    azAvgWidth: 854.3953488372093,
-    unitsPerEm: 2048
-};
-const DEFAULT_SANS_SERIF_FONT = {
-    name: "Arial",
-    xAvgCharWidth: 904,
-    azAvgWidth: 934.5116279069767,
-    unitsPerEm: 2048
-};
-const STATIC_STATUS_PAGES = (/* unused pure expression or super */ null && ([
-    "/500"
-]));
-const TRACE_OUTPUT_VERSION = 1;
-// in `MB`
-const TURBO_TRACE_DEFAULT_MEMORY_LIMIT = 6000;
-const RSC_MODULE_TYPES = {
-    client: "client",
-    server: "server"
-};
-// comparing
-// https://nextjs.org/docs/api-reference/edge-runtime
-// with
-// https://nodejs.org/docs/latest/api/globals.html
-const EDGE_UNSUPPORTED_NODE_APIS = (/* unused pure expression or super */ null && ([
-    "clearImmediate",
-    "setImmediate",
-    "BroadcastChannel",
-    "ByteLengthQueuingStrategy",
-    "CompressionStream",
-    "CountQueuingStrategy",
-    "DecompressionStream",
-    "DomException",
-    "MessageChannel",
-    "MessageEvent",
-    "MessagePort",
-    "ReadableByteStreamController",
-    "ReadableStreamBYOBRequest",
-    "ReadableStreamDefaultController",
-    "TransformStreamDefaultController",
-    "WritableStreamDefaultController"
-]));
-const SYSTEM_ENTRYPOINTS = new Set([
-    CLIENT_STATIC_FILES_RUNTIME_MAIN,
-    CLIENT_STATIC_FILES_RUNTIME_REACT_REFRESH,
-    CLIENT_STATIC_FILES_RUNTIME_AMP,
-    CLIENT_STATIC_FILES_RUNTIME_MAIN_APP
-]); //# sourceMappingURL=constants.js.map
-
 ;// CONCATENATED MODULE: ./node_modules/next/dist/esm/server/internal-utils.js
-
 
 const INTERNAL_QUERY_NAMES = [
     "__nextFallback",
@@ -1123,6 +965,17 @@ function stripInternalSearchParams(url, isEdge) {
     }
     return isStringUrl ? instance.toString() : instance;
 }
+/**
+ * Headers that are set by the Next.js server and should be stripped from the
+ * request headers going to the user's application.
+ */ const INTERNAL_HEADERS = (/* unused pure expression or super */ null && ([
+    "x-invoke-path",
+    "x-invoke-status",
+    "x-invoke-error",
+    "x-invoke-query",
+    "x-invoke-output",
+    "x-middleware-invoke"
+]));
 /**
  * Strip internal headers from the request headers.
  *
@@ -1178,20 +1031,14 @@ function stripInternalSearchParams(url, isEdge) {
 /**
  * Strips the `.rsc` extension if it's in the pathname.
  * Since this function is used on full urls it checks `?` for searchParams handling.
- */ function normalizeRscURL(url) {
-    return url.replace(/\.rsc($|\?)/, "$1");
+ */ function normalizeRscPath(pathname, enabled) {
+    return enabled ? pathname.replace(/\.rsc($|\?)/, "$1") : pathname;
 } //# sourceMappingURL=app-paths.js.map
 
 ;// CONCATENATED MODULE: ./node_modules/next/dist/esm/lib/constants.js
 const NEXT_QUERY_PARAM_PREFIX = "nxtP";
 const PRERENDER_REVALIDATE_HEADER = "x-prerender-revalidate";
 const PRERENDER_REVALIDATE_ONLY_GENERATED_HEADER = "x-prerender-revalidate-if-generated";
-const NEXT_DID_POSTPONE_HEADER = "x-nextjs-postponed";
-const RSC_PREFETCH_SUFFIX = ".prefetch.rsc";
-const RSC_SUFFIX = ".rsc";
-const NEXT_DATA_SUFFIX = ".json";
-const NEXT_META_SUFFIX = ".meta";
-const NEXT_BODY_SUFFIX = ".body";
 const NEXT_CACHE_TAGS_HEADER = "x-next-cache-tags";
 const NEXT_CACHE_SOFT_TAGS_HEADER = "x-next-cache-soft-tags";
 const NEXT_CACHE_REVALIDATED_TAGS_HEADER = "x-next-revalidated-tags";
@@ -1215,7 +1062,6 @@ const APP_DIR_ALIAS = "private-next-app-dir";
 const RSC_MOD_REF_PROXY_ALIAS = "private-next-rsc-mod-ref-proxy";
 const RSC_ACTION_VALIDATE_ALIAS = "private-next-rsc-action-validate";
 const RSC_ACTION_PROXY_ALIAS = "private-next-rsc-action-proxy";
-const RSC_ACTION_ENCRYPTION_ALIAS = "private-next-rsc-action-encryption";
 const RSC_ACTION_CLIENT_WRAPPER_ALIAS = "private-next-rsc-action-client-wrapper";
 const PUBLIC_DIR_MIDDLEWARE_CONFLICT = (/* unused pure expression or super */ null && (`You can not have a '_next' folder inside of your public folder. This conflicts with the internal '/_next' route. https://nextjs.org/docs/messages/public-next-folder-conflict`));
 const SSG_GET_INITIAL_PROPS_CONFLICT = (/* unused pure expression or super */ null && (`You can not use getInitialProps with getStaticProps. To use SSG, please remove your getInitialProps`));
@@ -1965,12 +1811,23 @@ class NextRequestHint extends NextRequest {
         });
     }
 }
+const adapter_FLIGHT_PARAMETERS = [
+    [
+        RSC
+    ],
+    [
+        NEXT_ROUTER_STATE_TREE
+    ],
+    [
+        NEXT_ROUTER_PREFETCH
+    ]
+];
 async function adapter(params) {
     await ensureInstrumentationRegistered();
     // TODO-APP: use explicit marker for this
     const isEdgeRendering = typeof self.__BUILD_MANIFEST !== "undefined";
     const prerenderManifest = typeof self.__PRERENDER_MANIFEST === "string" ? JSON.parse(self.__PRERENDER_MANIFEST) : undefined;
-    params.request.url = normalizeRscURL(params.request.url);
+    params.request.url = normalizeRscPath(params.request.url, true);
     const requestUrl = new NextURL(params.request.url, {
         headers: params.request.headers,
         nextConfig: params.request.nextConfig
@@ -2002,7 +1859,7 @@ async function adapter(params) {
     const flightHeaders = new Map();
     // Parameters should only be stripped for middleware
     if (!isEdgeRendering) {
-        for (const param of FLIGHT_PARAMETERS){
+        for (const param of adapter_FLIGHT_PARAMETERS){
             const key = param.toString().toLowerCase();
             const value = requestHeaders.get(key);
             if (value) {
@@ -2712,36 +2569,12 @@ var __dirname = "/";
 })();
 
 
-/***/ }),
-
-/***/ 459:
-/***/ ((module) => {
-
-"use strict";
-// Note: This file is JS because it's used by the taskfile-swc.js file, which is JS.
-// Keep file changes in sync with the corresponding `.d.ts` files.
-/**
- * These are the browser versions that support all of the following:
- * static import: https://caniuse.com/es6-module
- * dynamic import: https://caniuse.com/es6-module-dynamic-import
- * import.meta: https://caniuse.com/mdn-javascript_operators_import_meta
- */ 
-const MODERN_BROWSERSLIST_TARGET = [
-    "chrome 64",
-    "edge 79",
-    "firefox 67",
-    "opera 51",
-    "safari 12"
-];
-module.exports = MODERN_BROWSERSLIST_TARGET; //# sourceMappingURL=modern-browserslist-target.js.map
-
-
 /***/ })
 
 },
 /******/ __webpack_require__ => { // webpackRuntimeModules
 /******/ var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-/******/ var __webpack_exports__ = (__webpack_exec__(627));
+/******/ var __webpack_exports__ = (__webpack_exec__(220));
 /******/ (_ENTRIES = typeof _ENTRIES === "undefined" ? {} : _ENTRIES)["middleware_src/middleware"] = __webpack_exports__;
 /******/ }
 ]);

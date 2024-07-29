@@ -7,6 +7,9 @@ const nextConfig = {
   experimental: {
     appDir: true,
     typedRoutes: true,
+    serverActions: {
+      allowedOrigins: ['kondomino.com.br', 'localhost:3003'],
+    },
   },
   images: {
     remotePatterns: [
